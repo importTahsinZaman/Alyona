@@ -1,3 +1,17 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://insidefloor.tres" type="TileSet" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://PoliceStation.gd" type="Script" id=4]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 589824, 0, 0, 589827, 0, 0, 589830, 0, 0, 589833, 0, 0, 589836, 0, 0, 589839, 0, 0, 589842, 0, 0, 589845, 0, 0, 589848, 0, 0, 589851, 0, 0, 589854, 0, 0, 589857, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 459, 129 )

@@ -9,7 +9,7 @@ const ACCEL = 14
 var motion = Vector2()
 
 func _ready():
-	pass 
+	pass
 	
 func _physics_process(delta):
 	motion.y += GRAVITY
@@ -18,11 +18,11 @@ func _physics_process(delta):
 	
 	motion.x = clamp(motion.x, -MAXSPEED, MAXSPEED)
 	
-	if Input.is_action_pressed("ui_left") and self.position.x > -1175:
+	if Input.is_action_pressed("ui_left") and self.position.x > Global.camera_clamps.x + 15:
 		$Sprite.flip_h = true
 		$AnimationPlayer.play("Walk")
 		motion.x -= ACCEL
-	elif Input.is_action_pressed("ui_right") and self.position.x < 2231:
+	elif Input.is_action_pressed("ui_right") and self.position.x < Global.camera_clamps.y - 15:
 		$AnimationPlayer.play("Walk")
 		$Sprite.flip_h = false
 		motion.x += ACCEL

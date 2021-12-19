@@ -3,8 +3,8 @@
 [ext_resource path="res://Door.gd" type="Script" id=1]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 18.0
-height = 34.0
+radius = 19.0
+height = 0.0
 
 [node name="Area2D" type="Area2D"]
 collision_layer = 0
