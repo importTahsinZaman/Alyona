@@ -11,8 +11,10 @@ func _ready():
 	$Label.visible = false
 
 func _physics_process(delta):
-	if overlaps_body(body) and Input.is_action_pressed("interact"):
+	if overlaps_body(body) and Input.is_action_just_pressed("interact"):
 		get_parent().change_house(building, left_clamp, right_clamp)
+		if building != null:
+			Global.last_player_location = self.position
 
 
 func _on_Area2D_body_entered(body): $Label.visible = true

@@ -9,7 +9,7 @@ const ACCEL = 14
 var motion = Vector2()
 
 func _ready():
-	pass
+	if Global.return_to_town: self.position = Global.last_player_location
 	
 func _physics_process(delta):
 	motion.y += GRAVITY
