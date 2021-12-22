@@ -42,7 +42,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=4]
 resource_name = "Walk"
-length = 0.8
+length = 1.4
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -51,7 +51,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 4, 3, 5 ]
