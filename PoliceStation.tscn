@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://insidefloor.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://test.png" type="Texture" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,10 +11,16 @@
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 589824, 0, 0, 589827, 0, 0, 589830, 0, 0, 589833, 0, 0, 589836, 0, 0, 589839, 0, 0, 589842, 0, 0, 589845, 0, 0, 589848, 0, 0, 589851, 0, 0, 589854, 0, 0, 589857, 0, 0 )
+tile_data = PoolIntArray( 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 489, 128 )
+position = Vector2( 210, 192 )
 
 [node name="ExitDoor" parent="." instance=ExtResource( 3 )]
-position = Vector2( 542, 140 )
+position = Vector2( 376, 207 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 208, 125 )
+texture = ExtResource( 4 )

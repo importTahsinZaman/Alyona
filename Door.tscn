@@ -20,7 +20,7 @@ margin_top = -57.0
 margin_right = 14.0
 margin_bottom = -43.0
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
