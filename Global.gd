@@ -5,7 +5,7 @@ var last_player_location = Vector2(162,130)
 var return_to_town = false
 var player_body = null
 
-var seconds_til_night = 20
+var seconds_til_night = 120
 var current_frame = 0
 var time = 0
 var is_night = false

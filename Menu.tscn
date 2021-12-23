@@ -1,11 +1,36 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Menu.gd" type="Script" id=1]
-[ext_resource path="res://main_menu.png" type="Texture" id=2]
+[ext_resource path="res://main_menu2.png" type="Texture" id=2]
+[ext_resource path="res://customfont.tres" type="DynamicFont" id=3]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.270588, 0.223529, 0.419608, 0.623529 )
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.270588, 0.223529, 0.419608, 0.941176 )
+
+[sub_resource type="Theme" id=2]
+default_font = ExtResource( 3 )
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_focus = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = SubResource( 3 )
+Button/styles/normal = SubResource( 1 )
+Button/styles/pressed = SubResource( 4 )
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = SubResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -24,29 +49,29 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -153.0
-margin_top = -74.0
-margin_right = -44.0
-margin_bottom = -6.0
+margin_left = -196.0
+margin_top = -99.0
+margin_right = -59.0
+margin_bottom = -25.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
-margin_right = 109.0
-margin_bottom = 20.0
-text = "Start"
+margin_right = 137.0
+margin_bottom = 16.0
+text = "Play"
 
 [node name="AboutButton" type="Button" parent="VBoxContainer"]
-margin_top = 24.0
-margin_right = 109.0
-margin_bottom = 44.0
+margin_top = 20.0
+margin_right = 137.0
+margin_bottom = 36.0
 text = "About"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
-margin_top = 48.0
-margin_right = 109.0
-margin_bottom = 68.0
+margin_top = 40.0
+margin_right = 137.0
+margin_bottom = 56.0
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
