@@ -29,4 +29,4 @@ func change_house(building : PackedScene, left_clamp, right_clamp):
 		get_tree().change_scene(building.resource_path)
 	else:
 		camera_clamps = Vector2(-1185, 2255)
-		get_tree().change_scene("res://.mono/World.tscn")
+		get_tree().change_scene("res://World.tscn")
