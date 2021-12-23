@@ -56,7 +56,7 @@ tracks/0/keys = {
 height = 26.0
 
 [sub_resource type="CapsuleShape2D" id=5]
-height = 32.0
+height = 6.0
 
 [node name="Raskolnikov" type="KinematicBody2D"]
 collision_layer = 0
@@ -81,7 +81,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="AttackRange" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0, 4 )
+position = Vector2( 18, 0 )
 rotation = 1.5708
 shape = SubResource( 5 )
 
