@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hat-man-walk.png-d47b134ab0b833e2a9685e49301e88e0.stex"
+path="res://.import/crate.png-b83caf405963e4d199b63b1a11f14613.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Petrovich/hat-man-walk.png"
-dest_files=[ "res://.import/hat-man-walk.png-d47b134ab0b833e2a9685e49301e88e0.stex" ]
+source_file="res://crate.png"
+dest_files=[ "res://.import/crate.png-b83caf405963e4d199b63b1a11f14613.stex" ]
 
 [params]
 

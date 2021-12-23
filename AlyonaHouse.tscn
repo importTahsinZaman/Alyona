@@ -1,9 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Area2D.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://InteriorFloor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://background-pattern-composite.png" type="Texture" id=4]
+[ext_resource path="res://candle.png" type="Texture" id=5]
+[ext_resource path="res://ropes.png" type="Texture" id=6]
+[ext_resource path="res://table.png" type="Texture" id=7]
+[ext_resource path="res://chest.png" type="Texture" id=8]
+[ext_resource path="res://crate.png" type="Texture" id=9]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 19.0
@@ -12,25 +17,39 @@ height = 0.0
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 114, 118 )
-scale = Vector2( 1.58631, 1.775 )
+position = Vector2( -18, 110 )
+scale = Vector2( 1.38095, 1.4375 )
 texture = ExtResource( 4 )
 
 [node name="TileMap2" parent="." instance=ExtResource( 3 )]
 cell_size = Vector2( 16, 16 )
-tile_data = PoolIntArray( 327702, 2, 0, 720921, 1, 0 )
+tile_data = PoolIntArray( -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -262133, 0, 0, -262132, 0, 0, -262131, 0, 0, -262130, 0, 0, -262129, 0, 0, -262128, 0, 0, -262127, 0, 0, -262126, 0, 0, -262125, 0, 0, -262124, 0, 0, -262123, 0, 0, -262122, 0, 0, -262121, 0, 0, -262120, 0, 0, -262119, 0, 0, -196607, 4, 0, -196605, 4, 0, -196602, 4, 0, -196599, 4, 0, -196596, 4, 0, -196593, 4, 0, -196590, 4, 0, -196587, 4, 0, -196584, 4, 0, -196581, 4, 0, 131094, 2, 0, 589849, 1, 0 )
 
 [node name="TileMap" parent="." instance=ExtResource( 3 )]
 cell_size = Vector2( 32, 32 )
-tile_data = PoolIntArray( 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0 )
+tile_data = PoolIntArray( 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0 )
+
+[node name="Table" type="Sprite" parent="."]
+position = Vector2( 64, 182 )
+texture = ExtResource( 7 )
+
+[node name="Chest" type="Sprite" parent="."]
+position = Vector2( 230, 197 )
+texture = ExtResource( 8 )
+
+[node name="Crate" type="Sprite" parent="."]
+position = Vector2( 47, 166 )
+texture = ExtResource( 9 )
+
+[node name="Crate2" type="Sprite" parent="."]
+position = Vector2( 80, 166 )
+texture = ExtResource( 9 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 402, 218 )
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+position = Vector2( 341, 186 )
 
 [node name="AlyonaHouseDoor" type="Area2D" parent="."]
-position = Vector2( 413, 216 )
+position = Vector2( 417, 186 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AlyonaHouseDoor"]
@@ -38,13 +57,30 @@ position = Vector2( 0, -5 )
 shape = SubResource( 1 )
 
 [node name="Label" type="Label" parent="AlyonaHouseDoor"]
-margin_left = -26.0
-margin_top = -57.0
-margin_right = 14.0
-margin_bottom = -43.0
+margin_left = -45.0
+margin_top = -59.0
+margin_right = -5.0
+margin_bottom = -45.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="Candle" type="Sprite" parent="."]
+position = Vector2( 171, 194 )
+texture = ExtResource( 5 )
+
+[node name="Ropes2" type="Sprite" parent="."]
+position = Vector2( 12, 23 )
+texture = ExtResource( 6 )
+flip_h = true
+
+[node name="Ropes" type="Sprite" parent="."]
+position = Vector2( 259, 9 )
+texture = ExtResource( 6 )
+
+[node name="Candle2" type="Sprite" parent="."]
+position = Vector2( 410, 231 )
+texture = ExtResource( 5 )
 
 [connection signal="body_entered" from="AlyonaHouseDoor" to="AlyonaHouseDoor" method="_on_AlyonaHouseDoor_body_entered"]
 [connection signal="body_exited" from="AlyonaHouseDoor" to="AlyonaHouseDoor" method="_on_AlyonaHouseDoor_body_exited"]
