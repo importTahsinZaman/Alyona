@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Area2D.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://insidefloor.tres" type="TileSet" id=3]
-[ext_resource path="res://test.png" type="Texture" id=4]
+[ext_resource path="res://InteriorFloor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://background-pattern-composite.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 19.0
@@ -11,26 +11,30 @@ height = 0.0
 
 [node name="Node2D" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 3 )
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 114, 118 )
+scale = Vector2( 1.58631, 1.775 )
+texture = ExtResource( 4 )
+
+[node name="TileMap2" parent="." instance=ExtResource( 3 )]
 cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0 )
+tile_data = PoolIntArray( 327702, 2, 0, 720921, 1, 0 )
+
+[node name="TileMap" parent="." instance=ExtResource( 3 )]
+cell_size = Vector2( 32, 32 )
+tile_data = PoolIntArray( 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 210, 192 )
+position = Vector2( 402, 218 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
-position = Vector2( 208, 125 )
-texture = ExtResource( 4 )
-
 [node name="AlyonaHouseDoor" type="Area2D" parent="."]
-position = Vector2( 341, 197 )
+position = Vector2( 413, 216 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AlyonaHouseDoor"]
+position = Vector2( 0, -5 )
 shape = SubResource( 1 )
 
 [node name="Label" type="Label" parent="AlyonaHouseDoor"]
