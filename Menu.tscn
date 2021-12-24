@@ -1,16 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Menu.gd" type="Script" id=1]
 [ext_resource path="res://main_menu2.png" type="Texture" id=2]
 [ext_resource path="res://customfont.tres" type="DynamicFont" id=3]
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.270588, 0.223529, 0.419608, 0.623529 )
+[ext_resource path="res://buttonhover.tres" type="StyleBox" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.270588, 0.223529, 0.419608, 0.941176 )
 
 [sub_resource type="Theme" id=2]
 default_font = ExtResource( 3 )
@@ -23,9 +18,9 @@ Button/constants/hseparation = 2
 Button/fonts/font = null
 Button/styles/disabled = null
 Button/styles/focus = null
-Button/styles/hover = SubResource( 3 )
+Button/styles/hover = ExtResource( 4 )
 Button/styles/normal = SubResource( 1 )
-Button/styles/pressed = SubResource( 4 )
+Button/styles/pressed = ExtResource( 4 )
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -49,10 +44,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -196.0
-margin_top = -99.0
-margin_right = -59.0
-margin_bottom = -25.0
+margin_left = -147.0
+margin_top = -100.0
+margin_right = -10.0
+margin_bottom = -26.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -61,18 +56,28 @@ __meta__ = {
 margin_right = 137.0
 margin_bottom = 16.0
 text = "Play"
+align = 0
 
 [node name="AboutButton" type="Button" parent="VBoxContainer"]
 margin_top = 20.0
 margin_right = 137.0
 margin_bottom = 36.0
 text = "About"
+align = 0
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 margin_top = 40.0
 margin_right = 137.0
 margin_bottom = 56.0
 text = "Quit"
+align = 0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/AboutButton" to="." method="_on_AboutButton_pressed"]
