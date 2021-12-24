@@ -219,11 +219,13 @@ right_clamp = 416
 position = Vector2( 768, 135 )
 building = ExtResource( 20 )
 right_clamp = 624
+top_clamp = -25
 
 [node name="Alyona\'s House" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1526, 124 )
 building = ExtResource( 18 )
 right_clamp = 416
+top_clamp = -25
 
 [node name="Razumihin\'s House" parent="." instance=ExtResource( 8 )]
 position = Vector2( 2076, 124 )

@@ -8,7 +8,7 @@ func _ready():
 
 func _physics_process(delta):
 	if overlaps_body(body) and Input.is_action_just_pressed("interact"):
-		Global.change_house(null,null,null)
+		Global.change_house(null,null,null, -75.6)
 		Global.last_player_location = Vector2(1523, 132)
 
 func _on_AlyonaHouseDoor_body_entered(body):

@@ -13,6 +13,7 @@ const GRAVITY = 20
 const MAXFALLSPEED = 200
 const UP = Vector2(0,-1)
 const ACCEL = 8
+const JUMPFORCE = 500
 
 var motion = Vector2()
 
@@ -39,11 +40,14 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("interact"):
 		motion.x = lerp(motion.x, 0, 0.2)
 		attacking = true
-	elif Input.is_action_pressed("ui_left") and self.position.x > Global.camera_clamps.x + 15:
+	elif Input.is_action_pressed("ui_up"):
+		if is_on_floor():
+			motion.y = -JUMPFORCE
+	elif Input.is_action_pressed("ui_left") and self.position.x > Global.camera_clamps.x + 15 and is_on_floor():
 		$Sprite.flip_h = true
 		$AnimationPlayer.play("Walk")
 		motion.x -= ACCEL
-	elif Input.is_action_pressed("ui_right") and self.position.x < Global.camera_clamps.y - 15:
+	elif Input.is_action_pressed("ui_right") and self.position.x < Global.camera_clamps.y - 15 and is_on_floor():
 		$AnimationPlayer.play("Walk")
 		$Sprite.flip_h = false
 		motion.x += ACCEL

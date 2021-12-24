@@ -5,6 +5,7 @@ onready var body = get_parent().get_node("Player")
 export (PackedScene) var building
 export (int) var left_clamp
 export (int) var right_clamp
+export (int) var top_clamp
 
 func _ready():
 	if building != null: $Label.text = "(E) Enter"
@@ -13,7 +14,7 @@ func _ready():
 
 func _physics_process(delta):
 	if overlaps_body(body) and Input.is_action_just_pressed("interact"):
-		Global.change_house(building, left_clamp, right_clamp)
+		Global.change_house(building, left_clamp, right_clamp, top_clamp)
 		if building != null:
 			Global.last_player_location = self.position
 
