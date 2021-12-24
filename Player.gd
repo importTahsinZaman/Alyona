@@ -18,7 +18,6 @@ const JUMPFORCE = 500
 var motion = Vector2()
 
 var attacking = false
-var attack_cooldown = 0
 
 func _ready():
 	if Global.return_to_town: self.position = Global.last_player_location
@@ -27,7 +26,6 @@ func _ready():
 func set_attacking(): attacking = false
 	
 func _physics_process(delta):
-	attack_cooldown += 1 * delta
 	motion.y += GRAVITY
 	if motion.y > MAXFALLSPEED:
 		motion.y = MAXFALLSPEED
@@ -43,11 +41,11 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("ui_up"):
 		if is_on_floor():
 			motion.y = -JUMPFORCE
-	elif Input.is_action_pressed("ui_left") and self.position.x > Global.camera_clamps.x + 15 and is_on_floor():
+	elif Input.is_action_pressed("ui_left") and self.position.x > Global.camera_clamps.x + 15:
 		$Sprite.flip_h = true
 		$AnimationPlayer.play("Walk")
 		motion.x -= ACCEL
-	elif Input.is_action_pressed("ui_right") and self.position.x < Global.camera_clamps.y - 15 and is_on_floor():
+	elif Input.is_action_pressed("ui_right") and self.position.x < Global.camera_clamps.y - 15:
 		$AnimationPlayer.play("Walk")
 		$Sprite.flip_h = false
 		motion.x += ACCEL

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Area2D.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://table.png" type="Texture" id=7]
 [ext_resource path="res://chest.png" type="Texture" id=8]
 [ext_resource path="res://crate.png" type="Texture" id=9]
+[ext_resource path="res://Alyona.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 19.0
@@ -46,7 +47,10 @@ position = Vector2( 80, 166 )
 texture = ExtResource( 9 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 337, 184 )
+position = Vector2( 80, 180 )
+
+[node name="Alyona" parent="." instance=ExtResource( 10 )]
+position = Vector2( 265, 185 )
 
 [node name="AlyonaHouseDoor" type="Area2D" parent="."]
 position = Vector2( 417, 186 )
