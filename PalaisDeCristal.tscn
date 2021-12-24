@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://InteriorFloor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://backgrounds.png" type="Texture" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://table.png" type="Texture" id=4]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=5]
 [ext_resource path="res://bottle.png" type="Texture" id=6]
@@ -139,5 +140,8 @@ texture = ExtResource( 6 )
 position = Vector2( 501, 150 )
 scale = Vector2( 0.769231, 0.653061 )
 texture = ExtResource( 6 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 590, 164 )
 
 [editable path="ExitDoor"]

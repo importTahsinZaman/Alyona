@@ -1,11 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Characters/Player(Alyona)/OldWomanIdleSpriteSheet.png" type="Texture" id=3]
 [ext_resource path="res://Alyona.gd" type="Script" id=4]
-
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 7.0
-height = 8.0
 
 [sub_resource type="Animation" id=5]
 resource_name = "Attack"
@@ -25,16 +21,13 @@ length = 1.4
 loop = true
 
 [sub_resource type="CapsuleShape2D" id=9]
-height = 26.0
+radius = 4.99172
+height = 2.77485
 
 [node name="Alyona" type="KinematicBody2D"]
 position = Vector2( -1, -1 )
 collision_layer = 2
 script = ExtResource( 4 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 13 )
-shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 2, 7 )
@@ -50,5 +43,6 @@ anims/RESET = SubResource( 3 )
 anims/Walk = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 2, 2 )
+position = Vector2( 4, -4 )
+rotation = -0.98262
 shape = SubResource( 9 )
