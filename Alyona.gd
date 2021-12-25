@@ -3,21 +3,26 @@ extends KinematicBody2D
 const EXPLOSION = preload("res://explosion.tscn")
 const FIREBALL = preload("res://fireball.tscn")
 
-const MAXSPEED = 80
+const MAXSPEED = 60
 const GRAVITY = 20
 const MAXFALLSPEED = 200
 const UP = Vector2(0,-1)
-const ACCEL = 10
+const ACCEL = 8
 
 var motion = Vector2()
 
 var fire_cooldown = 2
 var fire_counter = 1
 
+var health = 1
+
 func _ready():
 	$Sprite.frame = 5
 
 func _physics_process(delta):
+	if health <= 0:
+		queue_free()
+
 	fire_counter += 1 * delta
 	
 	motion.y += GRAVITY
@@ -31,9 +36,13 @@ func _physics_process(delta):
 		fire()
 	elif self.position.x > Global.player_body.position.x:
 		$Sprite.flip_h = true
+		$Collision.position.x = -6
+		$Area2D/Hurtbox.position.x = -6
 		motion.x -= ACCEL
 	elif self.position.x < Global.player_body.position.x:
 		$Sprite.flip_h = false
+		$Collision.position.x = 1
+		$Area2D/Hurtbox.position.x = 1
 		motion.x += ACCEL
 	motion = move_and_slide(motion, UP)
 	
@@ -47,6 +56,10 @@ func fire():
 	var fireball = FIREBALL.instance()
 	
 	get_parent().add_child(fireball)
-	fireball.position = $Position2D.global_position
+	fireball.position = self.position
+	
 	if $Sprite.flip_h == true: 
 		fireball.velocity = Vector2(-1, 0) 
+		fireball.position.x -= 14
+	else:
+		fireball.position.x += 10

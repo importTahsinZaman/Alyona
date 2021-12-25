@@ -1,5 +1,10 @@
 extends Node
 
+const MAX_PLAYER_HEALTH = 10
+var current_player_health = MAX_PLAYER_HEALTH
+
+const MAX_ALYONA_HEALTH = 1
+
 var camera_clamps = Vector3(0,416, -25)
 var last_player_location = Vector2(162,130)
 var return_to_town = false

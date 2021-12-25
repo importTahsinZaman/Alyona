@@ -5,7 +5,7 @@
 [ext_resource path="res://InteriorFloor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://background-pattern-composite.png" type="Texture" id=4]
 [ext_resource path="res://candle.png" type="Texture" id=5]
-[ext_resource path="res://ropes.png" type="Texture" id=6]
+[ext_resource path="res://VikingAnimations/ropes.png" type="Texture" id=6]
 [ext_resource path="res://table.png" type="Texture" id=7]
 [ext_resource path="res://chest.png" type="Texture" id=8]
 [ext_resource path="res://crate.png" type="Texture" id=9]
@@ -24,10 +24,12 @@ texture = ExtResource( 4 )
 
 [node name="TileMap2" parent="." instance=ExtResource( 3 )]
 cell_size = Vector2( 16, 16 )
+collision_mask = 7
 tile_data = PoolIntArray( -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -262133, 0, 0, -262132, 0, 0, -262131, 0, 0, -262130, 0, 0, -262129, 0, 0, -262128, 0, 0, -262127, 0, 0, -262126, 0, 0, -262125, 0, 0, -262124, 0, 0, -262123, 0, 0, -262122, 0, 0, -262121, 0, 0, -262120, 0, 0, -262119, 0, 0, -196607, 4, 0, -196605, 4, 0, -196602, 4, 0, -196599, 4, 0, -196596, 4, 0, -196593, 4, 0, -196590, 4, 0, -196587, 4, 0, -196584, 4, 0, -196581, 4, 0, 131094, 2, 0, 589849, 1, 0 )
 
 [node name="TileMap" parent="." instance=ExtResource( 3 )]
 cell_size = Vector2( 32, 32 )
+collision_mask = 7
 tile_data = PoolIntArray( 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0 )
 
 [node name="Table" type="Sprite" parent="."]
@@ -47,10 +49,16 @@ position = Vector2( 80, 166 )
 texture = ExtResource( 9 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 80, 180 )
+position = Vector2( 208, 182 )
+
+[node name="Alyona3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 51, 187 )
 
 [node name="Alyona" parent="." instance=ExtResource( 10 )]
-position = Vector2( 265, 185 )
+position = Vector2( 330, 186 )
+
+[node name="Alyona2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 114, 186 )
 
 [node name="AlyonaHouseDoor" type="Area2D" parent="."]
 position = Vector2( 417, 186 )

@@ -5,28 +5,29 @@
 
 [sub_resource type="CapsuleShape2D" id=9]
 radius = 6.0
-height = 12.0
+height = 0.0
 
 [node name="Alyona" type="KinematicBody2D"]
 position = Vector2( -1, -1 )
-collision_mask = 0
+collision_layer = 4
+collision_mask = 2
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -1, 7 )
+position = Vector2( -3, 7 )
 texture = ExtResource( 3 )
 hframes = 9
 frame = 5
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 1, 12 )
+position = Vector2( 0, 18 )
 shape = SubResource( 9 )
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 2
 
 [node name="Hurtbox" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 1, 2 )
+position = Vector2( 1, 0 )
 shape = SubResource( 9 )
 
 [node name="Position2D" type="Position2D" parent="."]

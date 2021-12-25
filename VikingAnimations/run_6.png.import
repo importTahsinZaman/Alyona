@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ropes.png-bef24c4a5baae337774efa3eda02ecda.stex"
+path="res://.import/run_6.png-ff7db1e6ddcc43a63ba80c06dd7e247e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ropes.png"
-dest_files=[ "res://.import/ropes.png-bef24c4a5baae337774efa3eda02ecda.stex" ]
+source_file="res://VikingAnimations/run_6.png"
+dest_files=[ "res://.import/run_6.png-ff7db1e6ddcc43a63ba80c06dd7e247e.stex" ]
 
 [params]
 
