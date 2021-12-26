@@ -15,6 +15,9 @@ var current_frame = 0
 var time = 0
 var is_night = false
 
+var dialogue_playing
+var first_dialogue_shown = false
+
 func _process(delta):
 	if !is_night:
 		time += 1 * delta

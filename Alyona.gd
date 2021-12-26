@@ -20,31 +20,32 @@ func _ready():
 	$Sprite.frame = 0
 
 func _physics_process(delta):
-	if health <= 0:
-		queue_free()
+	if !Global.dialogue_playing:
+		if health <= 0:
+			queue_free()
 
-	fire_counter += 1 * delta
-	
-	motion.y += GRAVITY
-	if motion.y > MAXFALLSPEED:
-		motion.y = MAXFALLSPEED
-	
-	motion.x = clamp(motion.x, -MAXSPEED, MAXSPEED)
-	
-	if fire_counter >= fire_cooldown:
-		fire_counter = 0
-		fire()
-	elif self.position.x > Global.player_body.position.x:
-		$Sprite.flip_h = true
-		$Collision.position.x = -6
-		$Area2D/Hurtbox.position.x = -6
-		motion.x -= ACCEL
-	elif self.position.x < Global.player_body.position.x:
-		$Sprite.flip_h = false
-		$Collision.position.x = 1
-		$Area2D/Hurtbox.position.x = 1
-		motion.x += ACCEL
-	motion = move_and_slide(motion, UP)
+		fire_counter += 1 * delta
+		
+		motion.y += GRAVITY
+		if motion.y > MAXFALLSPEED:
+			motion.y = MAXFALLSPEED
+		
+		motion.x = clamp(motion.x, -MAXSPEED, MAXSPEED)
+		
+		if fire_counter >= fire_cooldown:
+			fire_counter = 0
+			fire()
+		elif self.position.x > Global.player_body.position.x:
+			$Sprite.flip_h = true
+			$Collision.position.x = -6
+			$Area2D/Hurtbox.position.x = -6
+			motion.x -= ACCEL
+		elif self.position.x < Global.player_body.position.x:
+			$Sprite.flip_h = false
+			$Collision.position.x = 1
+			$Area2D/Hurtbox.position.x = 1
+			motion.x += ACCEL
+		motion = move_and_slide(motion, UP)
 	
 func _on_Area2D_body_entered(body):
 	queue_free()

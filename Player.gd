@@ -48,7 +48,7 @@ func _physics_process(delta):
 	else:
 		motion.x = lerp(motion.x, 0, 0.2)
 		if !attacking: $AnimatedSprite.play("idle")
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("attack"):
 		$AnimatedSprite.play("attack")
 		attacking = true
 	

@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Dialogue.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -83.0
+margin_top = -42.0
+margin_right = 77.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 480, 270 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -27.0
+margin_top = -24.0
+margin_right = 39.0
+margin_bottom = 40.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Person1Text" type="RichTextLabel" parent="."]
+margin_left = 148.0
+margin_top = 56.0
+margin_right = 322.0
+margin_bottom = 120.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Person2Text" type="RichTextLabel" parent="."]
+margin_left = 156.0
+margin_top = 129.0
+margin_right = 325.0
+margin_bottom = 201.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="(E) Continue" type="RichTextLabel" parent="."]
+margin_left = 414.0
+margin_top = 248.0
+margin_right = 501.0
+margin_bottom = 264.0
+text = "(E) Continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}

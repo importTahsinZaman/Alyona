@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Area2D.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://chest.png" type="Texture" id=8]
 [ext_resource path="res://crate.png" type="Texture" id=9]
 [ext_resource path="res://Alyona.tscn" type="PackedScene" id=10]
+[ext_resource path="res://FirstDialogue.gd" type="Script" id=11]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 19.0
@@ -95,6 +96,57 @@ texture = ExtResource( 6 )
 [node name="Candle2" type="Sprite" parent="."]
 position = Vector2( 410, 231 )
 texture = ExtResource( 5 )
+
+[node name="FirstDialogue" type="Control" parent="."]
+visible = false
+margin_left = -3.0
+margin_top = -31.0
+margin_right = 423.0
+margin_bottom = 229.0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="FirstDialogue"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -27.0
+margin_top = -24.0
+margin_right = 39.0
+margin_bottom = 40.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Person1Text" type="RichTextLabel" parent="FirstDialogue"]
+margin_left = 152.0
+margin_top = 55.0
+margin_right = 325.0
+margin_bottom = 119.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Person2Text" type="RichTextLabel" parent="FirstDialogue"]
+margin_left = 152.0
+margin_top = 129.0
+margin_right = 325.0
+margin_bottom = 201.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="(E) Continue" type="RichTextLabel" parent="FirstDialogue"]
+margin_left = 332.0
+margin_top = 234.0
+margin_right = 419.0
+margin_bottom = 250.0
+text = "(E) Continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="body_entered" from="AlyonaHouseDoor" to="AlyonaHouseDoor" method="_on_AlyonaHouseDoor_body_entered"]
 [connection signal="body_exited" from="AlyonaHouseDoor" to="AlyonaHouseDoor" method="_on_AlyonaHouseDoor_body_exited"]
