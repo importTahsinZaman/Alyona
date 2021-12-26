@@ -1,11 +1,42 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Characters/Player(Alyona)/OldWomanIdleSpriteSheet.png" type="Texture" id=3]
+[ext_resource path="res://Characters/Player(Alyona)/NewOldWoman.png" type="Texture" id=1]
 [ext_resource path="res://Alyona.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleShape2D" id=9]
 radius = 6.0
 height = 0.0
+
+[sub_resource type="Animation" id=10]
+resource_name = "Death"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 2 ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
 
 [node name="Alyona" type="KinematicBody2D"]
 position = Vector2( -1, -1 )
@@ -15,9 +46,9 @@ script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -3, 7 )
-texture = ExtResource( 3 )
-hframes = 9
-frame = 5
+texture = ExtResource( 1 )
+hframes = 3
+frame = 1
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 18 )
@@ -32,5 +63,9 @@ shape = SubResource( 9 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 9, 9 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Death = SubResource( 10 )
+anims/RESET = SubResource( 11 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

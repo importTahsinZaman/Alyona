@@ -14,6 +14,4 @@ func _on_animation_finished():
 	queue_free()
 
 func _on_Area2D_body_entered(body):
-	print(body)
 	Global.current_player_health -= 1
-	print(Global.current_player_health)

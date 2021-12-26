@@ -51,7 +51,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("interact"):
 		$AnimatedSprite.play("attack")
 		attacking = true
-		
+	
 	motion = move_and_slide(motion, UP)
 
 

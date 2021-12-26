@@ -1,8 +1,9 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://light.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://Camera2D.gd" type="Script" id=3]
+[ext_resource path="res://Healthbar.tscn" type="PackedScene" id=4]
 [ext_resource path="res://VikingAnimations/run_3.png" type="Texture" id=5]
 [ext_resource path="res://VikingAnimations/run_4.png" type="Texture" id=6]
 [ext_resource path="res://VikingAnimations/run_6.png" type="Texture" id=7]
@@ -54,7 +55,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 15.75, 25.75 )
+extents = Vector2( 14.5, 25.75 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
@@ -90,8 +91,14 @@ collision_layer = 16
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2( 28.75, 0.75 )
+position = Vector2( 27.5, 0.75 )
 shape = SubResource( 7 )
+
+[node name="Healthbar" parent="." instance=ExtResource( 4 )]
+margin_left = -17.0
+margin_top = -21.0
+margin_right = 22.0
+margin_bottom = -17.0
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]

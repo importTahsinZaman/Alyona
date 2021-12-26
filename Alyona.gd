@@ -17,7 +17,7 @@ var fire_counter = 1
 var health = 1
 
 func _ready():
-	$Sprite.frame = 5
+	$Sprite.frame = 0
 
 func _physics_process(delta):
 	if health <= 0:
