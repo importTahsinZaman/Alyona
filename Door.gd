@@ -13,10 +13,16 @@ func _ready():
 	$Label.visible = false
 
 func _physics_process(delta):
-	if overlaps_body(body) and Input.is_action_just_pressed("interact"):
+	if Global.num_alyonas == 0 and overlaps_body(body) and Input.is_action_just_pressed("interact"):
 		Global.change_house(building, left_clamp, right_clamp, top_clamp)
 		if building != null:
 			Global.last_player_location = self.position
 
-func _on_Area2D_body_entered(body): $Label.visible = true
+func _on_Area2D_body_entered(body): 
+	$Label.visible = true
+	if Global.num_alyonas > 0:
+		$Label.text = "Alyona is nearby"
+	else:
+		if building != null: $Label.text = "(E) Enter"
+		elif building == null: $Label.text = "(E) Exit"
 func _on_Area2D_body_exited(body): $Label.visible = false

@@ -10,7 +10,7 @@ var last_player_location = Vector2(162,130)
 var return_to_town = false
 var player_body = null
 
-var seconds_til_night = 10
+var seconds_til_night = 1000
 var current_frame = 0
 var time = 1
 var is_night = false
@@ -18,10 +18,11 @@ var is_night = false
 var dialogue_playing
 var first_dialogue_shown = false
 
+var num_alyonas = 0
 
 func _process(delta):
-	time += 1 * delta
 	if !is_night:
+		time += 1 * delta
 		current_frame = range_lerp(time , 0, seconds_til_night, 0, 24)
 		if current_frame >= 24:
 			is_night = true

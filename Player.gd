@@ -11,6 +11,9 @@ const UP = Vector2(0,-1)
 const ACCEL = 8
 const JUMPFORCE = 500
 
+var jump_cooldown = 2.2
+var jump_timer = 4
+
 var motion = Vector2()
 
 var attacking = false
@@ -34,11 +37,13 @@ func _physics_process(delta):
 	if $AnimatedSprite.animation == "attack" and $AnimatedSprite.get_frame() == 3:
 		$HitBox/CollisionShape2D.disabled = false
 	
+	jump_timer += 1*delta
 	
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("ui_up") and jump_timer >= jump_cooldown:
 		if is_on_floor():
 			motion.y = -JUMPFORCE
 			$AnimatedSprite.play("jump")
+			jump_timer = 0
 	elif Input.is_action_pressed("ui_left") and self.position.x > Global.camera_clamps.x + 15 and !attacking:
 		$AnimatedSprite.flip_h = true
 		$HitBox/CollisionShape2D.position.x = -25
@@ -70,10 +75,14 @@ func _on_HitBox_body_entered(body):
 
 
 func _on_Timer_timeout():
-	print("spawning")
 	var alyona = ALYONA.instance()
 	get_parent().add_child(alyona)
 	get_parent().move_child(alyona, 8)
 	alyona.position.y = self.position.y
-	var rand_x = rng.randf_range(self.position.x - 300, self.position.x + 300)
+	var rand_x = 0
+	if !Global.return_to_town:
+		rand_x = rng.randf_range(0+ 15, Global.camera_clamps.y - 15)
+	else:
+		rand_x = rng.randf_range(self.position.x - 200, self.position.x + 200)
 	alyona.position.x = rand_x
+	Global.num_alyonas += 1

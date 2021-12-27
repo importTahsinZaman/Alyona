@@ -23,6 +23,7 @@ func _physics_process(delta):
 	if !Global.dialogue_playing:
 		if health <= 0:
 			queue_free()
+			Global.num_alyonas -= 1
 
 		fire_counter += 1 * delta
 		
@@ -49,6 +50,7 @@ func _physics_process(delta):
 	
 func _on_Area2D_body_entered(body):
 	queue_free()
+	Global.num_alyonas -= 1
 	var explosion = EXPLOSION.instance()
 	get_parent().add_child(explosion)
 	explosion.global_position = global_position
