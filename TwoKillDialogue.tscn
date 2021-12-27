@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://TwoKillDialogue.gd" type="Script" id=1]
+
+[node name="TwoKillDialogue" type="Control"]
+margin_left = -228.0
+margin_top = -228.0
+margin_right = 198.0
+margin_bottom = 32.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+margin_top = -2.0
+margin_right = 14.0
+margin_bottom = 18.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text1" type="RichTextLabel" parent="."]
+margin_left = 21.0
+margin_top = 79.0
+margin_right = 413.0
+margin_bottom = 169.0
+text = "Raskolnikov: Incredible. I've killed the old pawnbroker twice already, and I feel no remorse. This is the mind and body of an extraordinary man. No disease born of guilt. No second thought in the moment before the swing of an axe. "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="(E) Continue" type="RichTextLabel" parent="."]
+margin_left = 332.0
+margin_top = 234.0
+margin_right = 419.0
+margin_bottom = 250.0
+text = "(E) Continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -89,10 +89,10 @@ texture = ExtResource( 5 )
 
 [node name="FirstDialogue" type="Control" parent="."]
 visible = false
-margin_left = -3.0
-margin_top = -31.0
-margin_right = 423.0
-margin_bottom = 229.0
+margin_left = -8.0
+margin_top = -28.0
+margin_right = 418.0
+margin_bottom = 232.0
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -110,20 +110,39 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Person1Text" type="RichTextLabel" parent="FirstDialogue"]
-margin_left = 152.0
-margin_top = 55.0
-margin_right = 325.0
-margin_bottom = 119.0
+[node name="Text1" type="RichTextLabel" parent="FirstDialogue"]
+margin_left = 18.0
+margin_top = 18.0
+margin_right = 410.0
+margin_bottom = 108.0
+text = "This is the beginning of a new story--the story of the gradual
+renewal of a man, the story of his gradual regeneration, of his
+passing from one world into another, of his initiation into a new unknown life...
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Person2Text" type="RichTextLabel" parent="FirstDialogue"]
-margin_left = 152.0
-margin_top = 129.0
-margin_right = 325.0
-margin_bottom = 201.0
+[node name="Text2" type="RichTextLabel" parent="FirstDialogue"]
+margin_left = 17.0
+margin_top = 100.0
+margin_right = 403.0
+margin_bottom = 149.0
+text = "Raskolnikov lay on his plank bed and drifted to sleep...
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text3" type="RichTextLabel" parent="FirstDialogue"]
+margin_left = 16.0
+margin_top = 140.0
+margin_right = 398.0
+margin_bottom = 202.0
+text = "Use arrow keys to move left, move right and jump
+(E) Interact
+(x) Attack
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
