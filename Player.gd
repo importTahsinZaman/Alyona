@@ -19,8 +19,6 @@ var motion = Vector2()
 
 var attacking = false
 
-var kill_counter = 0
-
 func _ready():
 	$HitBox/CollisionShape2D.disabled = true
 	if Global.return_to_town: self.position = Global.last_player_location
@@ -76,8 +74,9 @@ func _on_AnimatedSprite_animation_finished():
 
 func _on_HitBox_body_entered(body):
 	if body.health - 1 == 0:
-		kill_counter += 1
-		if kill_counter == 1:
+		Global.kill_counter += 1
+		if Global.kill_counter == 1:
+			Global.first_kill = true
 			var two_kill_dialogue = TWOKILLDIALOGUE.instance()
 			get_parent().add_child(two_kill_dialogue)
 			two_kill_dialogue.rect_position.x = $Camera2D.position.x - 10
@@ -97,4 +96,3 @@ func _on_Timer_timeout():
 		else:
 			rand_x = rng.randf_range(self.position.x - 200, self.position.x + 200)
 		alyona.position.x = rand_x
-		Global.num_alyonas += 1

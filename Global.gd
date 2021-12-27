@@ -15,10 +15,14 @@ var current_frame = 0
 var time = 1
 var is_night = false
 
-var dialogue_playing
+var dialogue_playing = false
 var first_dialogue_shown = false
 
 var num_alyonas = 0
+
+var kill_counter = 0
+
+var first_kill = false
 
 func _process(delta):
 	if !is_night:

@@ -62,10 +62,13 @@ position = Vector2( 0, -5 )
 shape = SubResource( 1 )
 
 [node name="Label" type="Label" parent="AlyonaHouseDoor"]
-margin_left = -45.0
-margin_top = -59.0
-margin_right = -5.0
-margin_bottom = -45.0
+margin_left = -53.0
+margin_top = -64.0
+margin_right = -3.0
+margin_bottom = -46.0
+grow_vertical = 2
+align = 2
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": true
 }

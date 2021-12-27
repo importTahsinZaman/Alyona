@@ -7,7 +7,7 @@ func _ready():
 	$Label.visible = false
 
 func _physics_process(delta):
-	if Global.num_alyonas == 0 and overlaps_body(body) and Input.is_action_just_pressed("interact"):
+	if Global.first_kill and Global.num_alyonas == 0 and overlaps_body(body) and Input.is_action_just_pressed("interact"):
 		Global.change_house(null,null,null, -75.6)
 		Global.last_player_location = Vector2(1523, 132)
 
@@ -15,6 +15,8 @@ func _on_AlyonaHouseDoor_body_entered(body):
 	$Label.visible = true
 	if Global.num_alyonas > 0:
 		$Label.text = "Alyona is nearby"
+	elif Global.first_kill == false:
+		$Label.text = "Kill Alyona"
 	else:
 		$Label.text = "(E) Exit"
 
