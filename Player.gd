@@ -1,5 +1,9 @@
 extends KinematicBody2D
 
+const ALYONA = preload("res://Alyona.tscn")
+
+var rng = RandomNumberGenerator.new()
+
 const MAXSPEED = 80
 const GRAVITY = 20
 const MAXFALLSPEED = 200
@@ -63,3 +67,13 @@ func _on_AnimatedSprite_animation_finished():
 
 func _on_HitBox_body_entered(body):
 	body.health -= 1
+
+
+func _on_Timer_timeout():
+	print("spawning")
+	var alyona = ALYONA.instance()
+	get_parent().add_child(alyona)
+	get_parent().move_child(alyona, 8)
+	alyona.position.y = self.position.y
+	var rand_x = rng.randf_range(self.position.x - 300, self.position.x + 300)
+	alyona.position.x = rand_x

@@ -14,6 +14,7 @@ var max_person2_index
 
 func _ready():
 	if Global.first_dialogue_shown: self.hide()
+	else: self.visible = true
 	person1_dialogue = person1_string_dialogue.rsplit("#")
 	person2_dialogue = person2_string_dialogue.rsplit("#")
 	dialogue_index = 0

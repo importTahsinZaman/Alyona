@@ -38,11 +38,6 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "attack",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 10 ), ExtResource( 16 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "walk",
@@ -52,6 +47,11 @@ animations = [ {
 "loop": true,
 "name": "jump",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "attack",
+"speed": 15.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=7]
@@ -100,5 +100,10 @@ margin_top = -21.0
 margin_right = 22.0
 margin_bottom = -17.0
 
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_Timer_timeout"]
