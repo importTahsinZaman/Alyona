@@ -29,7 +29,7 @@ margin_left = 21.0
 margin_top = 79.0
 margin_right = 413.0
 margin_bottom = 169.0
-text = "Raskolnikov: Incredible. I've killed the old pawnbroker twice already, and I feel no remorse. This is the mind and body of an extraordinary man. No disease born of guilt. No second thought in the moment before the swing of an axe. "
+text = "Raskolnikov: Incredible. I've killed the old pawnbroker, and I feel no remorse. This is the mind and body of an extraordinary man. No disease born of guilt. No second thought in the moment before the swing of an axe. "
 __meta__ = {
 "_edit_use_anchors_": false
 }

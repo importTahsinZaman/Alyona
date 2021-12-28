@@ -215,7 +215,7 @@ position = Vector2( 470, 132 )
 [node name="PoliceStation" parent="." instance=ExtResource( 8 )]
 position = Vector2( 99, 128 )
 building = ExtResource( 17 )
-right_clamp = 416
+right_clamp = 480
 
 [node name="Palais De Cristal" parent="." instance=ExtResource( 8 )]
 position = Vector2( 768, 135 )
