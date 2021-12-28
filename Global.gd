@@ -6,6 +6,7 @@ var current_player_health = MAX_PLAYER_HEALTH
 const MAX_ALYONA_HEALTH = 1
 
 var camera_clamps = Vector3(0,416, -25)
+var camera_zoom_position = [1.3, 1.4, 2, -82]
 var last_player_location = Vector2(162,130)
 var return_to_town = false
 var player_body = null
@@ -36,11 +37,14 @@ func turned_night():
 	pass
 
 
-func change_house(building : PackedScene, left_clamp, right_clamp, top_clamp):
+func change_house(building : PackedScene, left_clamp, right_clamp, top_clamp, x_zoom, y_zoom, x_pos, y_pos):
 	return_to_town = !return_to_town
 	if building != null: 
 		camera_clamps = Vector3(left_clamp, right_clamp, top_clamp)
 		get_tree().change_scene(building.resource_path)
 	else:
 		camera_clamps = Vector3(-1185, 2255, -75.6)
+		camera_zoom_position = [1.3, 1.4, 2, -82]
 		get_tree().change_scene("res://World.tscn")
+	if x_zoom != 0:
+		camera_zoom_position = [x_zoom, y_zoom, x_pos, y_pos]

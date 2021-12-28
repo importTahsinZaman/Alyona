@@ -6,6 +6,10 @@ export (PackedScene) var building
 export (int) var left_clamp
 export (int) var right_clamp
 export (int) var top_clamp
+export (float) var x_zoom
+export (float) var y_zoom
+export (float) var x_pos
+export (float) var y_pos
 
 func _ready():
 	if building != null: $Label.text = "(E) Enter"
@@ -14,7 +18,7 @@ func _ready():
 
 func _physics_process(delta):
 	if Global.num_alyonas == 0 and overlaps_body(body) and Input.is_action_just_pressed("interact"):
-		Global.change_house(building, left_clamp, right_clamp, top_clamp)
+		Global.change_house(building, left_clamp, right_clamp, top_clamp, x_zoom, y_zoom, x_pos, y_pos)
 		if building != null:
 			Global.last_player_location = self.position
 

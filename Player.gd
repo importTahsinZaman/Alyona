@@ -20,6 +20,9 @@ var motion = Vector2()
 var attacking = false
 
 func _ready():
+	if !Global.first_kill: 
+		self.position.x = 200
+		self.position.y = 181
 	$HitBox/CollisionShape2D.disabled = true
 	if Global.return_to_town: self.position = Global.last_player_location
 	Global.player_body = self

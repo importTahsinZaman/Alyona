@@ -49,7 +49,7 @@ position = Vector2( 80, 166 )
 texture = ExtResource( 9 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 208, 182 )
+position = Vector2( 382, 180 )
 
 [node name="AlyonaHouseDoor" type="Area2D" parent="."]
 position = Vector2( 417, 186 )

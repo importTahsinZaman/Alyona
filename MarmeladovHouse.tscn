@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://InteriorFloor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://background-pattern-composite.png" type="Texture" id=4]
+[ext_resource path="res://candle.png" type="Texture" id=5]
+[ext_resource path="res://VikingAnimations/ropes.png" type="Texture" id=6]
+[ext_resource path="res://weapons-rack-empty.png" type="Texture" id=7]
+[ext_resource path="res://table.png" type="Texture" id=8]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 224, 0 )
+
+[node name="Background-pattern-composite" type="Sprite" parent="."]
+position = Vector2( -90, 141 )
+texture = ExtResource( 4 )
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+cell_size = Vector2( 32, 32 )
+collision_mask = 7
+tile_data = PoolIntArray( 65534, 4, 0, 65541, 2, 0, 458745, 0, 0, 458746, 0, 0, 458747, 0, 0, 458748, 0, 0, 458749, 0, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0 )
+
+[node name="TileMap2" parent="." instance=ExtResource( 1 )]
+cell_size = Vector2( 16, 16 )
+collision_mask = 7
+tile_data = PoolIntArray( -15, 0, 0, -12, 0, 0, -9, 0, 0, -6, 0, 0, -3, 0, 0, -1, 0, 0, -65534, 0, 0, -65531, 0, 0, -65528, 0, 0, -65525, 0, 0, 65523, 4, 0, 65526, 4, 0, 65529, 4, 0, 1, 4, 0, 4, 4, 0, 7, 4, 0, 10, 4, 0, 13, 4, 0, 589837, 1, 0 )
+
+[node name="Area2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 220, 176 )
+
+[node name="Weapons-rack-empty" type="Sprite" parent="."]
+position = Vector2( -168, 180 )
+texture = ExtResource( 7 )
+
+[node name="Candle2" type="Sprite" parent="."]
+position = Vector2( -124, 173 )
+scale = Vector2( 1.30952, 1.5 )
+texture = ExtResource( 5 )
+
+[node name="Table" type="Sprite" parent="."]
+position = Vector2( -31, 182 )
+texture = ExtResource( 8 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 194, 180 )
+
+[node name="Ropes" type="Sprite" parent="."]
+position = Vector2( -193, 77 )
+texture = ExtResource( 6 )
+
+[node name="Candle" type="Sprite" parent="."]
+position = Vector2( 136.487, 215.993 )
+scale = Vector2( 1.8584, 2.0411 )
+texture = ExtResource( 5 )
