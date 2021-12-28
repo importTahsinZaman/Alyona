@@ -11,7 +11,7 @@ var last_player_location = Vector2(162,130)
 var return_to_town = false
 var player_body = null
 
-var seconds_til_night = 1000
+var seconds_til_night = 360
 var current_frame = 0
 var time = 1
 var is_night = false
@@ -25,6 +25,11 @@ var kill_counter = 0
 
 var first_kill = false
 
+var player_dialogue_pos
+var dialogue_to_play
+var return_scene
+var return_from_dialogue = false
+
 func _process(delta):
 	if !is_night:
 		time += 1 * delta
@@ -32,6 +37,8 @@ func _process(delta):
 		if current_frame >= 24:
 			is_night = true
 			turned_night()
+	if num_alyonas < 0:
+		num_alyonas = 0
 
 func turned_night():
 	pass
@@ -48,3 +55,11 @@ func change_house(building : PackedScene, left_clamp, right_clamp, top_clamp, x_
 		get_tree().change_scene("res://World.tscn")
 	if x_zoom != 0:
 		camera_zoom_position = [x_zoom, y_zoom, x_pos, y_pos]
+		
+func change_dialogue(dialogue, player_pos, target_return_scene):
+	dialogue_to_play = dialogue
+	return_scene = target_return_scene
+	player_dialogue_pos = player_pos
+	get_tree().change_scene("res://Dialogue.tscn")
+	camera_clamps = Vector3(0, 320, 0)
+	camera_zoom_position = [1, 1, 1, -72]

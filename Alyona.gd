@@ -22,10 +22,10 @@ func _ready():
 
 func _physics_process(delta):
 	if !Global.dialogue_playing:
-		if health <= 0:
+		if health <= 0 or self.position.y >= 400:
 			queue_free()
 			Global.num_alyonas -= 1
-
+	
 		fire_counter += 1 * delta
 		
 		motion.y += GRAVITY

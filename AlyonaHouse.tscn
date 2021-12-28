@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Area2D.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://table.png" type="Texture" id=7]
 [ext_resource path="res://chest.png" type="Texture" id=8]
 [ext_resource path="res://crate.png" type="Texture" id=9]
+[ext_resource path="res://customfont2.tres" type="DynamicFont" id=10]
 [ext_resource path="res://FirstDialogue.gd" type="Script" id=11]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -25,7 +26,7 @@ texture = ExtResource( 4 )
 [node name="TileMap2" parent="." instance=ExtResource( 3 )]
 cell_size = Vector2( 16, 16 )
 collision_mask = 7
-tile_data = PoolIntArray( -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -262133, 0, 0, -262132, 0, 0, -262131, 0, 0, -262130, 0, 0, -262129, 0, 0, -262128, 0, 0, -262127, 0, 0, -262126, 0, 0, -262125, 0, 0, -262124, 0, 0, -262123, 0, 0, -262122, 0, 0, -262121, 0, 0, -262120, 0, 0, -262119, 0, 0, -196607, 4, 0, -196605, 4, 0, -196602, 4, 0, -196599, 4, 0, -196596, 4, 0, -196593, 4, 0, -196590, 4, 0, -196587, 4, 0, -196584, 4, 0, -196581, 4, 0, 131094, 2, 0, 589849, 1, 0 )
+tile_data = PoolIntArray( -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -262133, 0, 0, -262132, 0, 0, -262131, 0, 0, -262130, 0, 0, -262129, 0, 0, -262128, 0, 0, -262127, 0, 0, -262126, 0, 0, -262125, 0, 0, -262124, 0, 0, -262123, 0, 0, -262122, 0, 0, -262121, 0, 0, -262120, 0, 0, -262119, 0, 0, -196607, 4, 0, -196605, 4, 0, -196602, 4, 0, -196599, 4, 0, -196596, 4, 0, -196593, 4, 0, -196590, 4, 0, -196587, 4, 0, -196584, 4, 0, -196581, 4, 0, 65534, 0, 0, 65562, 0, 0, 131094, 2, 0, 393214, 0, 0, 458778, 0, 0, 589849, 1, 0, 720894, 0, 0 )
 
 [node name="TileMap" parent="." instance=ExtResource( 3 )]
 cell_size = Vector2( 32, 32 )
@@ -67,6 +68,7 @@ margin_top = -64.0
 margin_right = -3.0
 margin_bottom = -46.0
 grow_vertical = 2
+custom_fonts/font = ExtResource( 10 )
 align = 2
 autowrap = true
 __meta__ = {
@@ -114,10 +116,11 @@ __meta__ = {
 }
 
 [node name="Text1" type="RichTextLabel" parent="FirstDialogue"]
-margin_left = 18.0
-margin_top = 18.0
-margin_right = 410.0
-margin_bottom = 108.0
+margin_left = 77.0
+margin_top = 40.0
+margin_right = 359.0
+margin_bottom = 130.0
+custom_fonts/normal_font = ExtResource( 10 )
 text = "This is the beginning of a new story--the story of the gradual
 renewal of a man, the story of his gradual regeneration, of his
 passing from one world into another, of his initiation into a new unknown life...
@@ -127,10 +130,11 @@ __meta__ = {
 }
 
 [node name="Text2" type="RichTextLabel" parent="FirstDialogue"]
-margin_left = 17.0
-margin_top = 100.0
-margin_right = 403.0
-margin_bottom = 149.0
+margin_left = 75.0
+margin_top = 101.0
+margin_right = 461.0
+margin_bottom = 150.0
+custom_fonts/normal_font = ExtResource( 10 )
 text = "Raskolnikov lay on his plank bed and drifted to sleep...
 "
 __meta__ = {
@@ -138,10 +142,11 @@ __meta__ = {
 }
 
 [node name="Text3" type="RichTextLabel" parent="FirstDialogue"]
-margin_left = 16.0
-margin_top = 140.0
-margin_right = 398.0
-margin_bottom = 202.0
+margin_left = 75.0
+margin_top = 126.0
+margin_right = 457.0
+margin_bottom = 188.0
+custom_fonts/normal_font = ExtResource( 10 )
 text = "Use arrow keys to move left, move right and jump
 (E) Interact
 (x) Attack
@@ -151,10 +156,11 @@ __meta__ = {
 }
 
 [node name="(E) Continue" type="RichTextLabel" parent="FirstDialogue"]
-margin_left = 332.0
-margin_top = 234.0
-margin_right = 419.0
-margin_bottom = 250.0
+margin_left = 334.0
+margin_top = 221.0
+margin_right = 421.0
+margin_bottom = 237.0
+custom_fonts/normal_font = ExtResource( 10 )
 text = "(E) Continue"
 __meta__ = {
 "_edit_use_anchors_": false

@@ -24,7 +24,11 @@ func _ready():
 		self.position.x = 200
 		self.position.y = 181
 	$HitBox/CollisionShape2D.disabled = true
-	if Global.return_to_town: self.position = Global.last_player_location
+	if Global.return_to_town: 
+		self.position = Global.last_player_location
+	if Global.return_from_dialogue:
+		self.position = Global.player_dialogue_pos
+		Global.return_from_dialogue = false
 	Global.player_body = self
 	
 	
@@ -49,12 +53,12 @@ func _physics_process(delta):
 				motion.y = -JUMPFORCE
 				$AnimatedSprite.play("jump")
 				jump_timer = 0
-		elif Input.is_action_pressed("ui_left") and self.position.x > Global.camera_clamps.x + 15 and !attacking:
+		elif Input.is_action_pressed("ui_left") and !attacking:
 			$AnimatedSprite.flip_h = true
 			$HitBox/CollisionShape2D.position.x = -25
 			$AnimatedSprite.play("walk")
 			motion.x -= ACCEL
-		elif Input.is_action_pressed("ui_right") and self.position.x < Global.camera_clamps.y - 15 and !attacking:
+		elif Input.is_action_pressed("ui_right") and !attacking:
 			$AnimatedSprite.flip_h = false
 			$HitBox/CollisionShape2D.position.x = 28.75
 			$AnimatedSprite.play("walk")
@@ -89,13 +93,15 @@ func _on_HitBox_body_entered(body):
 
 func _on_Timer_timeout():
 	if !Global.dialogue_playing:
-		var alyona = ALYONA.instance()
-		get_parent().add_child(alyona)
-		get_parent().move_child(alyona, 8)
-		alyona.position.y = self.position.y
-		var rand_x = 0
-		if !Global.return_to_town:
-			rand_x = rng.randf_range(0+ 15, Global.camera_clamps.y - 15)
-		else:
-			rand_x = rng.randf_range(self.position.x - 200, self.position.x + 200)
-		alyona.position.x = rand_x
+		var rand_num = rng.randf_range(0, 5)
+		for i in range(rand_num):
+			var alyona = ALYONA.instance()
+			get_parent().add_child(alyona)
+			get_parent().move_child(alyona, 8)
+			alyona.position.y = self.position.y
+			var rand_x = 0
+			if !Global.return_to_town:
+				rand_x = rng.randf_range(0+ 15, Global.camera_clamps.y - 15)
+			else:
+				rand_x = rng.randf_range(self.position.x - 200, self.position.x + 200)
+			alyona.position.x = rand_x

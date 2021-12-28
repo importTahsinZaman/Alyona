@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://InteriorFloor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://backgrounds.png" type="Texture" id=2]
@@ -8,6 +8,10 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://VikingAnimations/ropes.png" type="Texture" id=7]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Porfiry/man-idle-1.png" type="Texture" id=9]
+[ext_resource path="res://Porfiry/man-idle-2.png" type="Texture" id=10]
+[ext_resource path="res://Porfiry/man-idle-3.png" type="Texture" id=11]
+[ext_resource path="res://Porfiry/man-idle-4.png" type="Texture" id=12]
 
 [sub_resource type="TileSet" id=1]
 0/name = "backgrounds.png 0"
@@ -81,6 +85,14 @@
 4/shapes = [  ]
 4/z_index = 0
 
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "idle",
+"speed": 3.0
+} ]
+
 [node name="Node2D" type="Node2D"]
 position = Vector2( 32, 12 )
 
@@ -110,10 +122,10 @@ tile_data = PoolIntArray( -196612, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 
 position = Vector2( 447, 180 )
 
 [node name="Label" parent="Area2D" index="1"]
-margin_left = -43.0
-margin_top = -58.0
-margin_right = -3.0
-margin_bottom = -44.0
+margin_left = -33.0
+margin_top = -55.0
+margin_right = 7.0
+margin_bottom = -41.0
 
 [node name="Wardrobe" type="Sprite" parent="."]
 position = Vector2( 380, 157 )
@@ -147,6 +159,13 @@ flip_h = true
 [node name="Ropes2" type="Sprite" parent="."]
 position = Vector2( 23, 26 )
 texture = ExtResource( 7 )
+
+[node name="Porfiry" type="AnimatedSprite" parent="."]
+position = Vector2( 141, 182 )
+frames = SubResource( 2 )
+animation = "idle"
+playing = true
+flip_h = true
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 419, 181 )

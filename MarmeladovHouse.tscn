@@ -29,6 +29,12 @@ tile_data = PoolIntArray( -15, 0, 0, -12, 0, 0, -9, 0, 0, -6, 0, 0, -3, 0, 0, -1
 [node name="Area2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( 220, 176 )
 
+[node name="Label" parent="Area2D" index="1"]
+margin_left = -28.0
+margin_top = -46.0
+margin_right = 12.0
+margin_bottom = -32.0
+
 [node name="Weapons-rack-empty" type="Sprite" parent="."]
 position = Vector2( -168, 180 )
 texture = ExtResource( 7 )
@@ -53,3 +59,5 @@ texture = ExtResource( 6 )
 position = Vector2( 136.487, 215.993 )
 scale = Vector2( 1.8584, 2.0411 )
 texture = ExtResource( 5 )
+
+[editable path="Area2D"]
