@@ -68,14 +68,19 @@ func set_dialogue():
 		"Porfiry":
 			person1 = "Porfiry"
 			person2 = "Raskolnikov"
-			person1_dialogue = ["If society is normally organised, all crime will cease at once, since there will be nothing to protest against and all men will become righteous in one instant. All crime may be ascribed to the influence of environment.", "There will be men who change our society with new thought and philosophy.", "Murder for what? If a man need murder to change society than he is not a man at all! The men I speak of need not murder, no!"]
-			person2_dialogue = ["How can society become normally organised?", "Have they the right to murder if it is for the cause of furthering their thought and philosophy on society?"]
+			person1_dialogue = ["If society is normally organised, all crime will cease at once, since there will be nothing to protest against and all men will become righteous in one instant. All crime may be ascribed to the influence of environment.", "There will be men who change our society with new thought and philosophy.", "Murder for what? If a man need murder to change society then he is not a man at all! The men I speak of need not murder, no!"]
+			person2_dialogue = ["How can society become normally organised?", "Have they the right to murder if it is for the cause of furthering their thought and philosophy?"]
 		"Zametov":
 			person1 = "Zametov"
 			person2 = "Raskolnikov"
 			person1_dialogue = ["A man will commit a clever murder at the risk of his life and then at once he goes drinking in a tavern. They are caught spending money, they are not all cunning!", "A fool indeed."]
 			person2_dialogue = ["Surely if a man did do such an act he would be nothing more than a fool!"]
-
+		"GhostOfMarmeladov":
+			person1 = "Ghost Of Marmeladov"
+			person2 = "Raskolnikov"
+			person1_dialogue = ["Poverty is not a vice, that's a true saying. Yet I know too that drunkenness is not a virtue, and that that's even truer. But beggary, honoured sir, beggary is a vice.", "In poverty you may still retain your innate nobility of soul, but in beggary--never--no one. For beggary a man is not chased out of human society with a stick, he is swept out with a broom, so as to make it as humiliating as possible!", "Mr. Lebeziatnikov explained the other day that compassion is forbidden nowadays by science itself. Does this mean we are only meant to murder and plunder?"]
+			person2_dialogue = ["...", "Should it be any different? Shall the beggar be rewarded for his beggary?"]
+			
 func return_to_scene():
 	Global.dialogue_playing = false
 	Global.return_from_dialogue = true
