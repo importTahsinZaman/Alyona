@@ -11,7 +11,7 @@ var last_player_location = Vector2(162,130)
 var return_to_town = false
 var player_body = null
 
-var seconds_til_night = 360
+var seconds_til_night = 320
 var current_frame = 0
 var time = 1
 var is_night = false
@@ -29,6 +29,11 @@ var player_dialogue_pos
 var dialogue_to_play
 var return_scene
 var return_from_dialogue = false
+
+const MAX_BOSS_HEALTH = 20
+var current_boss_health = MAX_BOSS_HEALTH
+
+var spoken_with_rask = false
 
 func _process(delta):
 	if !is_night:

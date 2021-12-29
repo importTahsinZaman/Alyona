@@ -46,6 +46,7 @@ func _process(delta):
 func set_dialogue():
 	match Global.dialogue_to_play:
 		"Raskolnikov":
+			Global.spoken_with_rask = true
 			person1 = "Raskolnikov"
 			person2 = "Raskolnikov"
 			person1_dialogue = ["The heat in the street is terrible: and the airlessness, the bustle and the plaster, scaffolding, bricks and dust all flying about. And that stench, how it tears at my every nerve", "Hate it? Why no! Petersburg is the home of my beloved, my Sonia.", "A miserable place? How can it be miserable? Sonia and Mama and Dounia, they're all here, how can it be miserable if they're all here?", "Why, honoured sir, must I worry for roubles? The ceiling is high enough for my head and my trousers fit my waist, is that not enough to be content? What more could I need?", "What will I do? Why, I am soon to become a lawyer. Do you believe I haven't the ability to complete my studies?", "Why Razumihin, he runs a publishing company. I work with him. It does not take an extraordinary man to complete my duties", "Why must I take on such weight of suffering? That is the duty of god. God will guide men and men will follow. All is as it should be"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://InteriorFloor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://weapons-rack-empty.png" type="Texture" id=7]
 [ext_resource path="res://table.png" type="Texture" id=8]
 [ext_resource path="res://DialogueBox.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Marmeladov/Marmeladov.png" type="Texture" id=10]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 224, 0 )
@@ -40,6 +41,10 @@ margin_bottom = -32.0
 position = Vector2( -96, 189 )
 self_name = "GhostOfMarmeladov"
 self_location = "MarmeladovHouse"
+
+[node name="Marmeladov" type="Sprite" parent="."]
+position = Vector2( -97, 185 )
+texture = ExtResource( 10 )
 
 [node name="Weapons-rack-empty" type="Sprite" parent="."]
 position = Vector2( -168, 180 )

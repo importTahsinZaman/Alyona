@@ -165,6 +165,7 @@ texture = ExtResource( 7 )
 position = Vector2( 141, 182 )
 frames = SubResource( 2 )
 animation = "idle"
+frame = 1
 playing = true
 flip_h = true
 
