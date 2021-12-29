@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://InteriorFloor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://backgrounds.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Zametov/bearded-idle-2.png" type="Texture" id=9]
 [ext_resource path="res://Zametov/bearded-idle-3.png" type="Texture" id=10]
 [ext_resource path="res://Zametov/bearded-idle-4.png" type="Texture" id=11]
+[ext_resource path="res://DialogueBox.tscn" type="PackedScene" id=12]
 
 [sub_resource type="TileSet" id=1]
 0/name = "backgrounds.png 0"
@@ -162,6 +163,11 @@ scale = Vector2( 1.15, 1.14894 )
 frames = SubResource( 2 )
 animation = "idle"
 frame = 1
+
+[node name="DialogueBox" parent="." instance=ExtResource( 12 )]
+position = Vector2( 176, 169 )
+self_name = "Zametov"
+self_location = "PalaisDeCristal"
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 590, 164 )

@@ -66,15 +66,15 @@ func set_dialogue():
 			person1_dialogue = ["Pyotr Petrovich was a mean and spiteful man. A true contemptible slanderer and a base fool.", "And was I wrong to? Rodya's happiness was our happiness. Was I wrong to seek happiness?", "Do you mean to accuse me of carelessness? Is it not the act of the extraordinary to give themselves up for the good of their brethren?", "But why must it be that way? If the extraordinary cannot go without murder then they are not extraordinary at all!"]
 			person2_dialogue = ["And yet you meant to marry him, simply for the good of your brother.", "You lie to yourself. You meant to sacrifice all you have, not gain happiness. Have you no respect for your own self?", "The extraordinary do not sacrifice!"]
 		"Porfiry":
-			person1 = "Raskolnikov"
+			person1 = "Porfiry"
 			person2 = "Raskolnikov"
-			person1_dialogue = ["w", "f"]
-			person2_dialogue = ["z", "q"]
+			person1_dialogue = ["If society is normally organised, all crime will cease at once, since there will be nothing to protest against and all men will become righteous in one instant. All crime may be ascribed to the influence of environment.", "There will be men who change our society with new thought and philosophy.", "Murder for what? If a man need murder to change society than he is not a man at all! The men I speak of need not murder, no!"]
+			person2_dialogue = ["How can society become normally organised?", "Have they the right to murder if it is for the cause of furthering their thought and philosophy on society?"]
 		"Zametov":
-			person1 = "Raskolnikov"
+			person1 = "Zametov"
 			person2 = "Raskolnikov"
-			person1_dialogue = ["w", "f"]
-			person2_dialogue = ["z", "q"]
+			person1_dialogue = ["A man will commit a clever murder at the risk of his life and then at once he goes drinking in a tavern. They are caught spending money, they are not all cunning!", "A fool indeed."]
+			person2_dialogue = ["Surely if a man did do such an act he would be nothing more than a fool!"]
 
 func return_to_scene():
 	Global.dialogue_playing = false
