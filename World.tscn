@@ -217,13 +217,13 @@ tile_data = PoolIntArray( -524364, 0, 0, -589681, 0, 0, -393292, 0, 0, -458609, 
 position = Vector2( -978, 125 )
 
 [node name="PoliceStation" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1525, 126 )
+position = Vector2( 1526, 114 )
 building = ExtResource( 17 )
 right_clamp = 480
 top_clamp = -25
 
 [node name="Palais De Cristal" parent="." instance=ExtResource( 8 )]
-position = Vector2( 768, 135 )
+position = Vector2( 769, 123 )
 building = ExtResource( 20 )
 right_clamp = 624
 top_clamp = -25
@@ -235,13 +235,13 @@ right_clamp = 416
 top_clamp = -25
 
 [node name="Razumihin\'s House" parent="." instance=ExtResource( 8 )]
-position = Vector2( -214, 126 )
+position = Vector2( -214, 113 )
 building = ExtResource( 19 )
 right_clamp = 416
 top_clamp = -25
 
 [node name="Raskolnikov House" parent="." instance=ExtResource( 8 )]
-position = Vector2( 2076, 123 )
+position = Vector2( 2078, 113 )
 building = ExtResource( 21 )
 right_clamp = 224
 top_clamp = 75
@@ -251,7 +251,7 @@ x_pos = 2.0
 y_pos = -33.0
 
 [node name="Marmeladov House" parent="." instance=ExtResource( 8 )]
-position = Vector2( 370, 124 )
+position = Vector2( 371, 114 )
 building = ExtResource( 22 )
 right_clamp = 448
 top_clamp = 55

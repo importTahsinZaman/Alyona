@@ -5,14 +5,14 @@ const TWOKILLDIALOGUE = preload("res://TwoKillDialogue.tscn")
 
 var rng = RandomNumberGenerator.new()
 
-const MAXSPEED = 80
+var MAXSPEED = 80 #80
 const GRAVITY = 20
 const MAXFALLSPEED = 200
 const UP = Vector2(0,-1)
-const ACCEL = 8
+var ACCEL = 8 #8
 const JUMPFORCE = 500
 
-var jump_cooldown = 2.2
+var jump_cooldown = 1.8
 var jump_timer = 4
 
 var motion = Vector2()
@@ -20,12 +20,29 @@ var motion = Vector2()
 var attacking = false
 
 func _ready():
+	get_node("Global").connect("spawn_alyona", self, "spawn_alyona")
 	if !Global.first_kill: 
 		self.position.x = 200
 		self.position.y = 181
 	$HitBox/CollisionShape2D.disabled = true
 	if Global.return_to_town: 
 		self.position = Global.last_player_location
+	if Global.return_from_death:
+		get_tree().change_scene("res://World.tscn")
+		if Global.spoken_with_rask:
+			get_parent().get_node("Raskolnikov House").local_change_house()
+		elif CheckpointTracker.police_door:
+			get_parent().get_node("PoliceStation").local_change_house()
+		elif CheckpointTracker.palais_door:
+			get_parent().get_node("Palais De Cristal").local_change_house()
+		elif CheckpointTracker.marm_door:
+			get_parent().get_node("Marmeladov House").local_change_house()
+		elif CheckpointTracker.raz_door:
+			get_parent().get_node("Razumihin's House").local_change_house()
+		else:
+			get_parent().get_node("Alyona's House").local_change_house()
+		#self.position = get_parent().get_node("Door").position - Vector2(8,0)
+		Global.return_from_death = false
 	if Global.return_from_dialogue:
 		self.position = Global.player_dialogue_pos
 		Global.return_from_dialogue = false
@@ -33,9 +50,15 @@ func _ready():
 	
 	
 func _physics_process(delta):
+	if !is_on_floor():
+		ACCEL = 16
+		MAXSPEED = 100
+	else:
+		ACCEL = 8
+		MAXSPEED = 80
 	if !Global.dialogue_playing:
 		if Global.current_player_health <= 0:
-			print("died")
+			get_tree().change_scene("res://DeathScreen.tscn")
 		
 		motion.y += GRAVITY
 		if motion.y > MAXFALLSPEED:
@@ -45,6 +68,8 @@ func _physics_process(delta):
 		
 		if $AnimatedSprite.animation == "attack" and $AnimatedSprite.get_frame() == 3:
 			$HitBox/CollisionShape2D.disabled = false
+		else:
+			$HitBox/CollisionShape2D.disabled = true
 		
 		jump_timer += 1*delta
 		
@@ -91,9 +116,9 @@ func _on_HitBox_body_entered(body):
 	body.health -= 1
 
 
-func _on_Timer_timeout():
+func spawn_alyona():
 	if !Global.dialogue_playing:
-		var rand_num = rng.randf_range(0, 5)
+		var rand_num = rng.randf_range(0, 3)
 		for i in range(rand_num):
 			var alyona = ALYONA.instance()
 			get_parent().add_child(alyona)

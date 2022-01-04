@@ -4,7 +4,7 @@ const MAXSPEED = 100
 const GRAVITY = 20
 const MAXFALLSPEED = 200
 const UP = Vector2(0,-1)
-const ACCEL = 8
+const ACCEL = 14
 const JUMPFORCE = 600
 
 var jump_cooldown = 1
@@ -18,12 +18,13 @@ func _ready():
 	Global.player_body = self
 	Global.current_player_health = Global.MAX_PLAYER_HEALTH
 	self.position = Vector2(393, 244)
+	$Camera2D.zoom = Vector2(1.3, 1.4)
 	
 	
 func _physics_process(delta):
 	if !Global.dialogue_playing:
 		if Global.current_player_health <= 0:
-			print("died")
+			get_tree().change_scene("res://DeathScreen.tscn")
 		
 		motion.y += GRAVITY
 		if motion.y > MAXFALLSPEED:
@@ -68,5 +69,19 @@ func _on_AnimatedSprite_animation_finished():
 
 
 func _on_HitBox_body_entered(body):
-	Global.current_boss_health -= 1
-
+	if Global.num_alyonas == 0 and !(body.is_in_group("Alyona")):
+		Global.current_boss_health -= 1
+		if Global.current_boss_health == int(0.75 * Global.MAX_BOSS_HEALTH):
+			$Camera2D.zoom = Vector2(1.3, 1.4)
+			get_parent().get_node("75%Dialogue").show()
+		elif Global.current_boss_health == int(0.50 * Global.MAX_BOSS_HEALTH):
+			get_parent().get_node("50%Dialogue").show()
+			$Camera2D.zoom = Vector2(1.3, 1.4)
+		elif Global.current_boss_health == int(0.25 * Global.MAX_BOSS_HEALTH):
+			get_parent().get_node("25%Dialogue").show()
+			$Camera2D.zoom = Vector2(1.3, 1.4)
+		elif Global.current_boss_health == 0:
+			$Camera2D.zoom = Vector2(1.3, 1.4)
+	elif body.is_in_group("Alyona"):
+		body.health -= 1
+	

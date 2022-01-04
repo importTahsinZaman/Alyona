@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://InteriorFloor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Sonia/young-woman-idle-8.png" type="Texture" id=17]
 [ext_resource path="res://Characters/Raskolnikov/hat-man-idle-2.png" type="Texture" id=18]
 [ext_resource path="res://Characters/Raskolnikov/hat-man-idle-3.png" type="Texture" id=19]
+[ext_resource path="res://RaskolnikovHouse.gd" type="Script" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -37,6 +38,7 @@ animations = [ {
 } ]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 20 )
 
 [node name="Background-pattern-composite" type="Sprite" parent="."]
 position = Vector2( 230, 149 )
@@ -78,27 +80,27 @@ position = Vector2( 134, 186 )
 self_name = "Sonia"
 self_location = "RaskolnikovHouse"
 
-[node name="Area2D" parent="." instance=ExtResource( 3 )]
+[node name="Door" parent="." instance=ExtResource( 3 )]
 position = Vector2( 221, 182 )
 
-[node name="Label" parent="Area2D" index="1"]
+[node name="Label" parent="Door" index="1"]
 margin_left = -28.0
 margin_top = -53.0
 margin_right = 12.0
 margin_bottom = -39.0
 
-[node name="Hat-man-idle-1" type="AnimatedSprite" parent="."]
+[node name="Raskolnikov" type="AnimatedSprite" parent="."]
 position = Vector2( 54, 184 )
 frames = SubResource( 1 )
 animation = "idle"
 frame = 1
 playing = true
 
-[node name="Young-woman-idle-1" type="AnimatedSprite" parent="."]
+[node name="Sonia" type="AnimatedSprite" parent="."]
 position = Vector2( 136, 183 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 3
+frame = 5
 playing = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
@@ -110,4 +112,4 @@ scale = Vector2( 0.947368, 1.08904 )
 texture = ExtResource( 5 )
 
 [editable path="RaskDialogue"]
-[editable path="Area2D"]
+[editable path="Door"]

@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const MAXSPEED = 50
+const MAXSPEED = 65
 const ACCEL = 7
 const UP = Vector2(0,-1)
 var motion = Vector2()
@@ -15,34 +15,37 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	if attacking:
-		$AnimatedSprite.play("AxeAttack")
-		if $AnimatedSprite.animation == "AxeAttack" and $AnimatedSprite.get_frame() == 5:
-			$Hitbox/CollisionShape2D.disabled = false
-		else:
-			$Hitbox/CollisionShape2D.disabled = true
+	if Global.dialogue_playing or Global.num_alyonas > 0:
+		$AnimatedSprite.play("Idle")
 	else:
-		if can_attack == false:
-			$AnimatedSprite.play("Idle")
-		elif player_in_left or player_in_right:
-			if player_in_right:
-				 $Hitbox/CollisionShape2D.position.x = 38
-				 $AnimatedSprite.flip_h = false
-			elif player_in_left:
-				$Hitbox/CollisionShape2D.position.x = -38
-				$AnimatedSprite.flip_h = true
+		if attacking:
 			$AnimatedSprite.play("AxeAttack")
-			attacking = true
+			if $AnimatedSprite.animation == "AxeAttack" and $AnimatedSprite.get_frame() == 5:
+				$Hitbox/CollisionShape2D.disabled = false
+			else:
+				$Hitbox/CollisionShape2D.disabled = true
 		else:
-			motion.x = clamp(motion.x, -MAXSPEED, MAXSPEED)
-			if self.position.x > Global.player_body.position.x:
-				$AnimatedSprite.flip_h = true
-				motion.x -= ACCEL
-			elif self.position.x < Global.player_body.position.x:
-				$AnimatedSprite.flip_h = false
-				motion.x += ACCEL
-			$AnimatedSprite.play("Run")
-			motion = move_and_slide(motion, UP)
+			if can_attack == false:
+				$AnimatedSprite.play("Idle")
+			elif player_in_left or player_in_right:
+				if player_in_right:
+					 $Hitbox/CollisionShape2D.position.x = 26.5
+					 $AnimatedSprite.flip_h = false
+				elif player_in_left:
+					$Hitbox/CollisionShape2D.position.x = -26.5
+					$AnimatedSprite.flip_h = true
+				$AnimatedSprite.play("AxeAttack")
+				attacking = true
+			else:
+				motion.x = clamp(motion.x, -MAXSPEED, MAXSPEED)
+				if self.position.x > Global.player_body.position.x:
+					$AnimatedSprite.flip_h = true
+					motion.x -= ACCEL
+				elif self.position.x < Global.player_body.position.x:
+					$AnimatedSprite.flip_h = false
+					motion.x += ACCEL
+				$AnimatedSprite.play("Run")
+				motion = move_and_slide(motion, UP) 
 
 
 func _on_DetectBoxRight_body_entered(body):player_in_right = true
@@ -62,4 +65,4 @@ func _on_Timer_timeout():
 
 
 func _on_Hitbox_body_entered(body):
-	Global.current_player_health -= 1
+	Global.current_player_health -= 2

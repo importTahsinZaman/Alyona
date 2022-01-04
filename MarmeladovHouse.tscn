@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://InteriorFloor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=2]
@@ -10,9 +10,11 @@
 [ext_resource path="res://table.png" type="Texture" id=8]
 [ext_resource path="res://DialogueBox.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Marmeladov/Marmeladov.png" type="Texture" id=10]
+[ext_resource path="res://MarmeladovHouse.gd" type="Script" id=11]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 224, 0 )
+script = ExtResource( 11 )
 
 [node name="Background-pattern-composite" type="Sprite" parent="."]
 position = Vector2( -90, 141 )
@@ -28,10 +30,10 @@ cell_size = Vector2( 16, 16 )
 collision_mask = 7
 tile_data = PoolIntArray( -15, 0, 0, -12, 0, 0, -9, 0, 0, -6, 0, 0, -3, 0, 0, -1, 0, 0, -65534, 0, 0, -65531, 0, 0, -65528, 0, 0, -65525, 0, 0, 65523, 4, 0, 65526, 4, 0, 65529, 4, 0, 1, 4, 0, 4, 4, 0, 7, 4, 0, 10, 4, 0, 13, 4, 0, 589837, 1, 0 )
 
-[node name="Area2D" parent="." instance=ExtResource( 2 )]
+[node name="Door" parent="." instance=ExtResource( 2 )]
 position = Vector2( 220, 176 )
 
-[node name="Label" parent="Area2D" index="1"]
+[node name="Label" parent="Door" index="1"]
 margin_left = -28.0
 margin_top = -46.0
 margin_right = 12.0
@@ -71,4 +73,4 @@ position = Vector2( 136.487, 215.993 )
 scale = Vector2( 1.8584, 2.0411 )
 texture = ExtResource( 5 )
 
-[editable path="Area2D"]
+[editable path="Door"]

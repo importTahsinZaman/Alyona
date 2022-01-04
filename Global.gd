@@ -11,7 +11,7 @@ var last_player_location = Vector2(162,130)
 var return_to_town = false
 var player_body = null
 
-var seconds_til_night = 320
+var seconds_til_night = 180
 var current_frame = 0
 var time = 1
 var is_night = false
@@ -34,6 +34,10 @@ const MAX_BOSS_HEALTH = 20
 var current_boss_health = MAX_BOSS_HEALTH
 
 var spoken_with_rask = false
+
+var return_from_death
+
+signal spawn_alyona
 
 func _process(delta):
 	if !is_night:
@@ -68,3 +72,7 @@ func change_dialogue(dialogue, player_pos, target_return_scene):
 	get_tree().change_scene("res://Dialogue.tscn")
 	camera_clamps = Vector3(0, 320, 0)
 	camera_zoom_position = [1, 1, 1, -72]
+
+
+func _on_Timer_timeout():
+	emit_signal("spawn_alyona")

@@ -38,7 +38,7 @@ tracks/0/keys = {
 "values": [ 1 ]
 }
 
-[node name="Alyona" type="KinematicBody2D"]
+[node name="Alyona" type="KinematicBody2D" groups=["Alyona"]]
 position = Vector2( -1, -1 )
 collision_layer = 4
 collision_mask = 2

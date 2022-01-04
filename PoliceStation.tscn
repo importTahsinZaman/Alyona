@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://InteriorFloor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://backgrounds.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Porfiry/man-idle-3.png" type="Texture" id=11]
 [ext_resource path="res://Porfiry/man-idle-4.png" type="Texture" id=12]
 [ext_resource path="res://DialogueBox.tscn" type="PackedScene" id=13]
+[ext_resource path="res://PoliceStation.gd" type="Script" id=14]
 
 [sub_resource type="TileSet" id=1]
 0/name = "backgrounds.png 0"
@@ -96,6 +97,7 @@ animations = [ {
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 32, 12 )
+script = ExtResource( 14 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 32, 0 )
@@ -119,10 +121,10 @@ cell_size = Vector2( 16, 16 )
 collision_mask = 7
 tile_data = PoolIntArray( -196612, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -262133, 0, 0, -262132, 0, 0, -262131, 0, 0, -262130, 0, 0, -262129, 0, 0, -262128, 0, 0, -262127, 0, 0, -262126, 0, 0, -262125, 0, 0, -262124, 0, 0, -262123, 0, 0, -262122, 0, 0, -262121, 0, 0, -262120, 0, 0, -131074, 4, 0, -196607, 4, 0, -196605, 4, 0, -196602, 4, 0, -196599, 4, 0, -196596, 4, 0, -196593, 4, 0, -196590, 4, 0, -196587, 4, 0, -196584, 4, 0, 131094, 2, 0, 589849, 1, 0 )
 
-[node name="Area2D" parent="." instance=ExtResource( 8 )]
+[node name="Door" parent="." instance=ExtResource( 8 )]
 position = Vector2( 447, 180 )
 
-[node name="Label" parent="Area2D" index="1"]
+[node name="Label" parent="Door" index="1"]
 margin_left = -33.0
 margin_top = -55.0
 margin_right = 7.0
@@ -165,7 +167,6 @@ texture = ExtResource( 7 )
 position = Vector2( 141, 182 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 1
 playing = true
 flip_h = true
 
@@ -177,4 +178,4 @@ self_location = "PoliceStation"
 [node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 419, 181 )
 
-[editable path="Area2D"]
+[editable path="Door"]
