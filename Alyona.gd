@@ -24,7 +24,7 @@ func _physics_process(delta):
 	if !Global.dialogue_playing:
 		if health <= 0 or self.position.y >= 400:
 			if health <= 0 and Global.current_player_health < Global.MAX_PLAYER_HEALTH:  
-				Global.current_player_health += 2
+				Global.current_player_health += 1
 			queue_free()
 			Global.num_alyonas -= 1
 	
