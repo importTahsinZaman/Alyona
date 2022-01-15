@@ -1,15 +1,15 @@
 extends CanvasModulate
 
-func play():
-	Global.dialogue_playing = true
-	get_parent().get_node("eyes").show()
+func fade_in():
+	self.show()
 	$AnimationPlayer.play("transition")
-	
-func del_key():
+
+func del_eyes():
+	get_parent().get_node("eyes").hide()
 	get_parent().get_node("eyes").queue_free()
-	
-func del_self():
+
+func animation_finished():
 	queue_free()
-	Global.dialogue_playing = false
+	Global.dialogue_playing = false;
 
 

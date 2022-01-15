@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://death.png" type="Texture" id=1]
-[ext_resource path="res://customfont2.tres" type="DynamicFont" id=2]
+[ext_resource path="res://VeniceClassic.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://DeathScreen.gd" type="Script" id=4]
 [ext_resource path="res://Transition.gd" type="Script" id=5]
 
@@ -35,26 +35,22 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0.537255, 0.254902, 0.254902, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.733333, 0.556863, 0.94902, 0.290196 )
+[sub_resource type="Theme" id=8]
 
-[sub_resource type="StyleBoxEmpty" id=2]
+[sub_resource type="DynamicFont" id=9]
+size = 72
+font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxEmpty" id=3]
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.254902, 0.141176, 0.443137, 0.333333 )
 
-[sub_resource type="Theme" id=4]
-Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
-Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
-Button/colors/font_color_focus = Color( 0.94, 0.94, 0.94, 1 )
-Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
-Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
-Button/constants/hseparation = 2
-Button/fonts/font = null
-Button/styles/disabled = null
-Button/styles/focus = null
-Button/styles/hover = SubResource( 1 )
-Button/styles/normal = SubResource( 2 )
-Button/styles/pressed = SubResource( 3 )
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="DynamicFont" id=13]
+size = 64
+font_data = ExtResource( 3 )
 
 [node name="DeathScreen" type="Control"]
 margin_right = 40.0
@@ -81,27 +77,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 39.0
-margin_top = 34.0
-margin_right = 115.0
-margin_bottom = 68.0
-rect_scale = Vector2( 3, 3 )
-custom_fonts/normal_font = ExtResource( 2 )
-text = "Death"
+[node name="Button" type="Button" parent="."]
+margin_left = 137.0
+margin_top = 100.0
+margin_right = 275.0
+margin_bottom = 173.0
+rect_scale = Vector2( 0.4, 0.4 )
+theme = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/normal = SubResource( 11 )
+text = "retry"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
-margin_left = 122.0
-margin_top = 89.0
-margin_right = 343.0
-margin_bottom = 164.0
-rect_scale = Vector2( 0.4, 0.4 )
-theme = SubResource( 4 )
-custom_fonts/font = ExtResource( 2 )
-text = "retry"
+[node name="Label" type="Label" parent="."]
+margin_left = 94.0
+margin_top = 39.0
+margin_right = 262.0
+margin_bottom = 115.0
+custom_fonts/font = SubResource( 13 )
+text = "Death"
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -25,8 +25,7 @@ func _process(delta):
 			alyona.position.y = 182
 			alyona.position.x = 75
 			self.queue_free()
-			get_parent().get_node("eyes_modulate").show()
-			get_parent().get_node("eyes_modulate").play()
+			get_parent().get_node("eyes").close()
 		else:
 			if $Text2.visible == false:
 				$Text2.show()

@@ -118,7 +118,7 @@ func _on_HitBox_body_entered(body):
 
 func spawn_alyona():
 	if !Global.dialogue_playing:
-		var rand_num = rng.randf_range(0, 3)
+		var rand_num = rng.randf_range(0, 5)
 		for i in range(rand_num):
 			var alyona = ALYONA.instance()
 			get_parent().add_child(alyona)

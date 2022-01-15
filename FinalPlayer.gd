@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
-const MAXSPEED = 100
+var MAXSPEED = 100
 const GRAVITY = 20
 const MAXFALLSPEED = 200
 const UP = Vector2(0,-1)
-const ACCEL = 14
+var ACCEL = 14
 const JUMPFORCE = 600
 
 var jump_cooldown = 1
@@ -22,6 +22,12 @@ func _ready():
 	
 	
 func _physics_process(delta):
+	if !is_on_floor():
+		ACCEL = 18
+		MAXSPEED = 120
+	else:
+		ACCEL = 14
+		MAXSPEED = 100
 	if !Global.dialogue_playing:
 		if Global.current_player_health <= 0:
 			get_tree().change_scene("res://DeathScreen.tscn")
