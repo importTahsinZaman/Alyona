@@ -213,7 +213,7 @@ margin_top = 126.0
 margin_right = 457.0
 margin_bottom = 188.0
 custom_fonts/normal_font = ExtResource( 10 )
-text = "Use arrow keys or WAD to move left, move right and jump
+text = "Use arrow keys or WASD to move left, move right and jump
 (E) Interact
 (X) or (P) Attack
 

@@ -87,7 +87,8 @@ func _on_HitBox_body_entered(body):
 			get_parent().get_node("25%Dialogue").show()
 			$Camera2D.zoom = Vector2(1.3, 1.4)
 		elif Global.current_boss_health == 0:
-			$Camera2D.zoom = Vector2(1.3, 1.4)
+			$Camera2D.zoom = Vector2(1,1)
+			get_tree().change_scene("res://GameFinishedScreen.tscn")
 	elif body.is_in_group("Alyona"):
 		body.health -= 1
 	

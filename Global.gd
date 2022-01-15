@@ -30,7 +30,7 @@ var dialogue_to_play
 var return_scene
 var return_from_dialogue = false
 
-const MAX_BOSS_HEALTH = 20
+const MAX_BOSS_HEALTH = 15
 var current_boss_health = MAX_BOSS_HEALTH
 
 var spoken_with_rask = false
