@@ -2,6 +2,7 @@ extends Node2D
 
 func _ready():
 	$RichTextLabel.hide()
+	$CreatedBy.hide()
 	$Game_finished_eyes.play("default")
 
 func _on_Game_finished_eyes_animation_finished():
@@ -12,4 +13,5 @@ func _on_Game_finished_eyes_animation_finished():
 func show_thanks():
 	$Game_finished_eyes.frame = 0
 	$RichTextLabel.show()
+	$CreatedBy.show()
 	

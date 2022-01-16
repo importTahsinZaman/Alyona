@@ -21,18 +21,20 @@ func _physics_process(delta):
 		if attacking:
 			$AnimatedSprite.play("AxeAttack")
 			if $AnimatedSprite.animation == "AxeAttack" and $AnimatedSprite.get_frame() == 5:
-				$Hitbox/CollisionShape2D.disabled = false
+				if $AnimatedSprite.flip_h:
+					$Hitbox/HitboxLeft.disabled = false
+				elif !$AnimatedSprite.flip_h:
+					$Hitbox/HitboxRight.disabled = false
 			else:
-				$Hitbox/CollisionShape2D.disabled = true
+				$Hitbox/HitboxRight.disabled = true
+				$Hitbox/HitboxLeft.disabled = true
 		else:
 			if can_attack == false:
 				$AnimatedSprite.play("Idle")
 			elif player_in_left or player_in_right:
 				if player_in_right:
-					 $Hitbox/CollisionShape2D.position.x = 26.5
 					 $AnimatedSprite.flip_h = false
 				elif player_in_left:
-					$Hitbox/CollisionShape2D.position.x = -26.5
 					$AnimatedSprite.flip_h = true
 				$AnimatedSprite.play("AxeAttack")
 				attacking = true
@@ -47,7 +49,6 @@ func _physics_process(delta):
 				$AnimatedSprite.play("Run")
 				motion = move_and_slide(motion, UP) 
 
-
 func _on_DetectBoxRight_body_entered(body):player_in_right = true
 func _on_DetectBoxRight_body_exited(body): player_in_right = false
 func _on_DetectBoxLeft_body_entered(body): player_in_left = true
@@ -55,7 +56,8 @@ func _on_DetectBoxLeft_body_exited(body): player_in_left = false
 
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "AxeAttack":
-		$Hitbox/CollisionShape2D.disabled = true
+		$Hitbox/HitboxRight.disabled = true
+		$Hitbox/HitboxLeft.disabled = true
 		attacking = false
 		can_attack = false
 

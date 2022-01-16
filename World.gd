@@ -9,7 +9,6 @@ func _ready():
 	if CheckpointTracker.porf_spoken: CheckpointTracker.police_door = true
 	
 	CheckpointTracker.house_doors = [CheckpointTracker.raz_door, CheckpointTracker.marm_door, CheckpointTracker.palais_door, CheckpointTracker.police_door, CheckpointTracker.rask_door]
-	print(CheckpointTracker.house_doors)
 	
 	for i in range(5):
 		if CheckpointTracker.house_doors[i] == false:

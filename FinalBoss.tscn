@@ -23,28 +23,29 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "Run",
-"speed": 7.0
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 2 ) ],
+"loop": false,
+"name": "AxeAttack",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 2 ) ],
-"loop": false,
-"name": "AxeAttack",
-"speed": 5.0
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Run",
+"speed": 7.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=3]
 radius = 7.33333
 height = 12.0
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 21.25, 32 )
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 13.3904
+height = 22.6551
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.482353, 0.0862745, 0.0862745, 1 )
@@ -70,7 +71,7 @@ position = Vector2( 2, 5.66667 )
 scale = Vector2( 1, 0.8 )
 frames = SubResource( 1 )
 animation = "AxeAttack"
-frame = 3
+frame = 5
 
 [node name="Hurtbox" type="CollisionShape2D" parent="."]
 position = Vector2( 0.333333, 16.6667 )
@@ -80,9 +81,16 @@ shape = SubResource( 3 )
 collision_layer = 8
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( 29.0833, 0.333333 )
-shape = SubResource( 4 )
+[node name="HitboxRight" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 28.6667, 16.3333 )
+rotation = 0.744113
+shape = SubResource( 7 )
+disabled = true
+
+[node name="HitboxLeft" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( -26.6667, 15.3333 )
+rotation = -0.675679
+shape = SubResource( 7 )
 disabled = true
 
 [node name="DetectBoxRight" type="Area2D" parent="."]
@@ -90,8 +98,9 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectBoxRight"]
-position = Vector2( 26.5001, 0 )
-shape = SubResource( 4 )
+position = Vector2( 28.6667, 16.3333 )
+rotation = 0.744113
+shape = SubResource( 7 )
 
 [node name="DetectBoxLeft" type="Area2D" parent="."]
 position = Vector2( -78.3333, 0.333333 )
@@ -99,8 +108,9 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectBoxLeft"]
-position = Vector2( 52.6665, 0 )
-shape = SubResource( 4 )
+position = Vector2( 51.3333, 15 )
+rotation = -0.674566
+shape = SubResource( 7 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

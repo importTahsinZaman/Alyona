@@ -11,6 +11,5 @@ func _physics_process(delta):
 		queue_free()
 
 func _on_Area2D_body_entered(body):
-	print("hit player")
 	queue_free()
 	Global.current_player_health -= 1

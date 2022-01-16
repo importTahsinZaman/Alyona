@@ -43,7 +43,7 @@ func _physics_process(delta):
 		
 		jump_timer += 1*delta
 		
-		if Input.is_action_pressed("ui_up") and jump_timer >= jump_cooldown:
+		if Input.is_action_pressed("ui_up") and !attacking and jump_timer >= jump_cooldown:
 			if is_on_floor():
 				motion.y = -JUMPFORCE
 				$AnimatedSprite.play("jump")
@@ -91,4 +91,5 @@ func _on_HitBox_body_entered(body):
 			get_tree().change_scene("res://GameFinishedScreen.tscn")
 	elif body.is_in_group("Alyona"):
 		body.health -= 1
+		
 	

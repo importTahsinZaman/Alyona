@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://GameFinishedScreen.gd" type="Script" id=1]
 [ext_resource path="res://EyesClosing/eyesclosing5.png" type="Texture" id=2]
@@ -33,7 +33,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "fade_out"
-length = 4.0
+length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
@@ -41,7 +41,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 3, 4 ),
+"times": PoolRealArray( 0, 2, 3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
@@ -53,7 +53,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 3 ),
+"times": PoolRealArray( 2 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -62,6 +62,10 @@ tracks/1/keys = {
 }
 
 [sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 6
 font_data = ExtResource( 7 )
 
 [node name="GameFinishedScreen" type="Node2D"]
@@ -85,6 +89,17 @@ margin_right = 250.0
 margin_bottom = 112.0
 custom_fonts/font = SubResource( 4 )
 text = "Thank you for playing!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreatedBy" type="Label" parent="."]
+margin_left = 5.0
+margin_top = 168.0
+margin_right = 77.0
+margin_bottom = 177.0
+custom_fonts/font = SubResource( 5 )
+text = "Created by Tahsin Zaman"
 __meta__ = {
 "_edit_use_anchors_": false
 }

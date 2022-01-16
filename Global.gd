@@ -11,7 +11,7 @@ var last_player_location = Vector2(162,130)
 var return_to_town = false
 var player_body = null
 
-var seconds_til_night = 180
+var seconds_til_night = 200
 var current_frame = 0
 var time = 1
 var is_night = false
@@ -30,7 +30,7 @@ var dialogue_to_play
 var return_scene
 var return_from_dialogue = false
 
-const MAX_BOSS_HEALTH = 15
+const MAX_BOSS_HEALTH = 17
 var current_boss_health = MAX_BOSS_HEALTH
 
 var spoken_with_rask = false
@@ -40,7 +40,7 @@ var return_from_death
 signal spawn_alyona
 
 func _process(delta):
-	if !is_night:
+	if first_kill and !is_night:
 		time += 1 * delta
 		current_frame = range_lerp(time , 0, seconds_til_night, 0, 24)
 		if current_frame >= 24:

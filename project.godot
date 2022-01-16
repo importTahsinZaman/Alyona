@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="CrimeAndPunishment:DetectivePetrovich"
+config/name="Alyona"
 run/main_scene="res://Menu.tscn"
 config/icon="res://icon.png"
 

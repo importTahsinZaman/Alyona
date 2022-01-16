@@ -8,7 +8,7 @@ func _on_StartButton_pressed():
 
 
 func _on_AboutButton_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://AboutScreen.tscn")
 
 
 func _on_QuitButton_pressed():
