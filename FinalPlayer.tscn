@@ -26,7 +26,8 @@
 [ext_resource path="res://VikingAnimations/run_1.png" type="Texture" id=24]
 [ext_resource path="res://VikingAnimations/ready_5.png" type="Texture" id=25]
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 21 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -40,15 +41,15 @@ animations = [ {
 "name": "walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 17 ), ExtResource( 5 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 20 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "attack",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 17 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -68,7 +69,7 @@ limit_right = 624
 limit_bottom = 292
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 2, 7.5 )
+position = Vector2( 2, 7 )
 shape = SubResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

@@ -22,7 +22,9 @@ func _ready():
 	
 	
 func _physics_process(delta):
+	
 	if !is_on_floor():
+		print("not on floor")
 		ACCEL = 18
 		MAXSPEED = 120
 	else:

@@ -100,7 +100,7 @@ playing = true
 position = Vector2( 136, 183 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 5
+frame = 4
 playing = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
