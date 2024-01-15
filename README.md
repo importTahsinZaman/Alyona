@@ -12,3 +12,4 @@ Alyona ends when the player defeats the final boss, and Raskolnikov wakes up (he
 <img width="1440" alt="image" src="https://github.com/importTahsinZaman/Alyona/assets/86907892/8e37d4fa-fccd-4df0-81bd-10fbc4a3fb0c">
 <img width="1440" alt="image" src="https://github.com/importTahsinZaman/Alyona/assets/86907892/77c03223-3403-4bba-a079-3e93343a6b7f">
 <img width="1434" alt="image" src="https://github.com/importTahsinZaman/Alyona/assets/86907892/b3cd7401-01bc-4eb6-9f61-4bf4c31c2d09">
+<img width="1440" alt="image" src="https://github.com/importTahsinZaman/Alyona/assets/86907892/8ac0aa99-f130-45f7-806f-782a721053a2">
