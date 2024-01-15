@@ -1,0 +1,7 @@
+My primary motivation for creating Alyona was to bring the aspects of psychological realism and horror that I loved in the novel Crime and Punishment into a game that others could play. 
+
+The player’s main task is to speak to each of the NPCs in St. Petersburg, who each represent a different psychological struggle Raskolnikov, the player/protagonist, is going through in the novel regarding his choice to murder Alyona, his landlady. Each NPC challenges Raskolnikov’s thinking, and players who have read the book will recognize quotes as well as original dialogue that represent major plot points in the novel. 
+
+After speaking to each NPC, the player faces off against the final boss - a larger, stronger version of Raskolnikov. Raskolnikov himself is the final boss because every struggle the player has encountered is internal. Even though technically, Raskolnikov is on the run from law enforcement for the entirety of the novel, what hurts him is actually his own being. At the end of Crime and Punishment, Raskolnikov turns himself in, a representation of victory over his past in which he lived by the destructive philosophies of the Übermensch and disregarded the lives of others.
+
+Alyona ends when the player defeats the final boss, and Raskolnikov wakes up (hence the eyes at the beginning and end of the game.) Alyona, as a whole, represents one of the many dreams Raskolnikov is implied to have in the novel, which are almost always pretense for plot-altering actions taken by Raskolnikov.
